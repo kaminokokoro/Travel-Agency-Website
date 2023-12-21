@@ -1,0 +1,29 @@
+import uvicorn
+from fastapi import APIRouter, FastAPI
+from fastapi.responses import JSONResponse
+from backend.routes.login import router_login
+from backend.routes.user import router_user
+# REST API Settings
+app = FastAPI()
+
+# API Routers
+
+
+
+app.include_router(router_login, prefix='',tags=['Login'])
+app.include_router(router_user, prefix='/user',tags=['User'])
+
+
+
+
+
+# Root API
+@app.get('/')
+def root() -> JSONResponse:
+    return JSONResponse(status_code=200,
+                        content={
+                            "message": "Welcome to Sample Server"})
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level='debug', reload=True)
