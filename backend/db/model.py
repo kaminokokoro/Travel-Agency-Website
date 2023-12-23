@@ -58,9 +58,9 @@ class UserProfile(Base):
 class UserCard(Base):
     __tablename__ = "user_card"
     id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
-    user_id = Column(String(36), ForeignKey('user_account.id'), unique=True)
+    user_id = Column(String(36), ForeignKey('user_account.id'),nullable=False)
     user = relationship("User", back_populates="card")
-    card_number = Column(String(20),nullable=False)
+    card_number = Column(String(20),nullable=False, unique=True)
     name_on_card = Column(String(50), nullable=False)
     cvv = Column(String(10), nullable=False)
     expiry_date = Column(Date, nullable=False)

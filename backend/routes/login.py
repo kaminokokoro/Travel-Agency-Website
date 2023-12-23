@@ -41,12 +41,12 @@ def authenticate_user(form_data: OAuth2PasswordRequestForm = Depends()) -> JSONR
             access_token_expires = timedelta(
                 minutes=ProjectSettings.ACCESS_TOKEN_EXPIRE_MINUTES)
             token = access_token.create_access_token(
-                data={"sub": form_data.username},
+                data={"sub": db_user.id},
                 expires_delta=access_token_expires)
             return JSONResponse(status_code=200,
                                 content={"access_token": token,
                                          "token_type": "Bearer",
-                                         "phone_number":jsonable_encoder(form_data.username)})
+                                         })
 
 @router_login.post("/login",
              responses=response_schemas.login_response)
@@ -83,11 +83,12 @@ def login_user(user:  Annotated[
             access_token_expires = timedelta(
                 minutes=ProjectSettings.ACCESS_TOKEN_EXPIRE_MINUTES)
             token = access_token.create_access_token(
-                data={"sub": user.phone_number},
+                data={"sub": db_user.id},
                 expires_delta=access_token_expires)
             return JSONResponse(status_code=200,
                                 content={"access_token": token,
                                          "token_type": "Bearer",
+                                         "user_id":jsonable_encoder(db_user.id),
                                          "phone_number":jsonable_encoder(user.phone_number),
                                          "authorization":jsonable_encoder(db_user.authorization)})
 
