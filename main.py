@@ -1,6 +1,8 @@
 import uvicorn
 from fastapi import APIRouter, FastAPI
 from fastapi.responses import JSONResponse
+
+from backend.routes.hotel import router_hotel
 from backend.routes.login import router_login
 from backend.routes.user import router_user
 # REST API Settings
@@ -12,7 +14,7 @@ app = FastAPI()
 
 app.include_router(router_login, prefix='',tags=['Login'])
 app.include_router(router_user, prefix='/user',tags=['User'])
-
+app.include_router(router_hotel, prefix='/hotel',tags=['Hotel'])
 
 
 

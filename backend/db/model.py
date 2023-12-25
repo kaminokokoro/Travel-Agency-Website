@@ -175,7 +175,7 @@ class HotelBooking(Base):
     user_card = relationship("UserCard", back_populates="hotel_booking")
     hotel_services_id = Column(String(36), ForeignKey('hotel_services.id'))
     hotel_services = relationship("HotelServices", back_populates="hotel_booking")
-    number_of_people= Column(Integer, nullable=False, default=1)
+    number_of_room= Column(Integer, nullable=False, default=1)
     check_in = Column(Date, nullable=False)
     check_out = Column(Date, nullable=False)
     payment_status = Column(SmallInteger)

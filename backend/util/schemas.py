@@ -52,3 +52,55 @@ class UserCardUpdateSchemas(UserCardID):
     name_on_card : str
     cvv : str
     expiry_date : date
+
+class HotelCreate(BaseModel):
+    name : str
+    phone_number : str
+    description : str
+    address : str
+    city : str
+    state : str
+    zip_code :str
+
+class HotelUpdate(HotelCreate):
+    id : str
+
+class HotelDelete(BaseModel):
+    id : str
+
+
+
+class HotelServiceCreate(BaseModel):
+    name : str
+    room_type : str
+    room_capacity: int
+    description : str
+    price : int
+    hotel_id : str
+
+class HotelServiceUpdate(HotelServiceCreate):
+    id : str
+
+class HotelServiceDelete(BaseModel):
+    id : str
+
+
+
+class HotelBookingCreate(BaseModel):
+    user_id : str
+    user_card_id : str
+    hotel_services_id : str
+    number_of_people : int
+    check_in : date
+    check_out : date
+    payment_status : int
+    payment_time : datetime
+    payment_description : str
+
+class HotelBookingUpdate(HotelBookingCreate):
+    id : str
+
+class HotelBookingDelete(BaseModel):
+    id : str
+
+
