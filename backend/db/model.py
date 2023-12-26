@@ -76,15 +76,33 @@ class UserCard(Base):
 #     tour_id = Column(String(36), ForeignKey('tour.id'))
 #     tour = relationship("Tour", back_populates="saved")
 
-class UserRating(Base):
-    __tablename__ = "user_rating"
+class UserRatingHotel(Base):
+    __tablename__ = "user_rating_hotel"
+    id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
+    user_id = Column(String(36), ForeignKey('user_account.id'), unique=True)
+    user = relationship("User", back_populates="rating")
+    hotel_id = Column(String(36), ForeignKey('hotel.id'), unique=True)
+    hotel = relationship("Hotel", back_populates="rating")
+    rating = Column(Integer)
+    comment = Column(String(200))
+
+class UserRatingTour(Base):
+    __tablename__ = "user_rating_tour"
     id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
     user_id = Column(String(36), ForeignKey('user_account.id'), unique=True)
     user = relationship("User", back_populates="rating")
     tour_id = Column(String(36), ForeignKey('tour.id'), unique=True)
     tour = relationship("Tour", back_populates="rating")
-    hotel_id = Column(String(36), ForeignKey('hotel.id'), unique=True)
-    hotel = relationship("Hotel", back_populates="rating")
+    rating = Column(Integer)
+    comment = Column(String(200))
+
+class UserRatingFlight(Base):
+    __tablename__ = "user_rating_flight"
+    id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
+    user_id = Column(String(36), ForeignKey('user_account.id'), unique=True)
+    user = relationship("User", back_populates="rating")
+    flight_id = Column(String(36), ForeignKey('flight.id'), unique=True)
+    flight = relationship("Flight", back_populates="rating")
     rating = Column(Integer)
     comment = Column(String(200))
 

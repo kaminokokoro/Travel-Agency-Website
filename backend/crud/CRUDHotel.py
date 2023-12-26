@@ -1,7 +1,7 @@
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import and_, func
 from backend.db.db import session_scope
-from backend.db.model import Hotel, generate_uuid, UserRating
+from backend.db.model import Hotel, generate_uuid, UserRatingHotel
 from backend.util import schemas
 
 
@@ -78,9 +78,9 @@ class CRUDHotel:
         try:
             with session_scope() as db:
                 hotels = (
-                    db.query(Hotel, func.avg(UserRating.rating).label('average_rating'))
-                    .join(UserRating)
-                    .group_by(Hotel.id).order_by(func.avg(UserRating.rating).desc())
+                    db.query(Hotel, func.avg(UserRatingHotel.rating).label('average_rating'))
+                    .join(UserRatingHotel)
+                    .group_by(Hotel.id).order_by(func.avg(UserRatingHotel.rating).desc())
                     .limit(page_size)
                     .offset((page_number - 1) * page_size)
                     .all()
