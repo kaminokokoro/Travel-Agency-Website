@@ -1,3 +1,4 @@
+from fastapi.encoders import jsonable_encoder
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import and_, func
 from backend.db.db import session_scope
@@ -85,7 +86,14 @@ class CRUDHotel:
                     .offset((page_number - 1) * page_size)
                     .all()
                 )
-                return hotels
+                # Convert to list of dictionaries
+                serialized_hotels = []
+                for hotel, avg_rating in hotels:
+                    hotel_dict = hotel.__dict__
+                    hotel_dict['average_rating'] = avg_rating
+                    serialized_hotels.append(hotel_dict)
+
+                return serialized_hotels
         except SQLAlchemyError as e:
             error = str(e.__dict__['orig'])
             print(error)
@@ -107,5 +115,5 @@ crud_hotel = CRUDHotel()
 # crud_hotel.create_hotel(hotel=schemas.HotelCreate(name="hotel1", phone_number="123", description="123",address="123",
 #                                                   city="123",state="123",zip_code="123"))
 # # crud_hotel.create_hotel(hotel=schemas.HotelCreate(name="hotel2", phone_number="123", description="123"))
-# crud_hotel.get_all_hotel(page_number=1, page_size=10)
+# print({"test":jsonable_encoder(crud_hotel.get_all_hotel(page_number=1, page_size=10))})
 # crud_hotel.update_hotel(hotel=schemas.HotelUpdate(id="1",name="hotel1", phone_number="123", description="123"))
