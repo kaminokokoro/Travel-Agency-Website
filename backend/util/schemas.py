@@ -90,7 +90,7 @@ class HotelBookingCreate(BaseModel):
     user_id : str
     user_card_id : str
     hotel_services_id : str
-    number_of_people : int
+    number_of_room : int
     check_in : date
     check_out : date
     payment_status : int

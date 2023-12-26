@@ -3,11 +3,14 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
 from backend.crud.CRUDHotel import crud_hotel
+from backend.routes.hotel_service import router_hotel_service
+from backend.routes.hotel_booking import router_hotel_booking
 from backend.util import response_schemas, schemas
 from backend.util.deps import get_current_user
 
 router_hotel = APIRouter()
-
+router_hotel.include_router(router_hotel_service, prefix='/service', tags=['Hotel Service'])
+router_hotel.include_router(router_hotel_booking, prefix='/service/booking', tags=['Hotel Booking'])
 
 @router_hotel.post("/", responses=response_schemas.hotel_create_response)
 def create_hotel(hotel: schemas.HotelCreate,
@@ -20,7 +23,7 @@ def create_hotel(hotel: schemas.HotelCreate,
     if hotel_create is None:
         return JSONResponse(status_code=400,
                             content={"detail": "Bad Request"})
-    return JSONResponse(status_code=200, content={"detail": "Hotel Created"})
+    return JSONResponse(status_code=200, content={"message": "Hotel Created"})
 
 
 @router_hotel.put("/", responses=response_schemas.hotel_update_response)
@@ -34,7 +37,7 @@ def update_hotel(hotel: schemas.HotelUpdate,
     if hotel_update is None:
         return JSONResponse(status_code=400,
                             content={"detail": "Bad Request"})
-    return JSONResponse(status_code=200, content={"detail": "Hotel Updated"})
+    return JSONResponse(status_code=200, content={"message": "Hotel Updated"})
 
 
 @router_hotel.delete("/", responses=response_schemas.hotel_delete_response)
@@ -53,7 +56,7 @@ def delete_hotel(hotel: schemas.HotelDelete,
 
 @router_hotel.get("/", responses=response_schemas.hotel_get_response)
 def get_hotel(hotel_id) -> JSONResponse:
-    """ Get Hotel"""
+    """ Get Hotel by hotel_id"""
     hotel_get = crud_hotel.get_hotel(hotel_id=hotel_id)
     if hotel_get is None:
         return JSONResponse(status_code=400,
@@ -70,11 +73,11 @@ def get_all_hotel(page_number: int = 1, page_size: int = 10) -> JSONResponse:
                             content={"detail": "Bad Request"})
     return JSONResponse(status_code=200, content={"hotel": jsonable_encoder(hotel_all)})
 
-# @router_hotel.get("/filter",responses=response_schemas.hotel_all_response)
-# def get_all_hotel(page_number:int = 1,page_size:int=10) -> JSONResponse:
-#     """ Get All Hotel"""
-#     # hotel_all=crud_hotel.get_all_hotel(page_number=page_number,page_size=page_size)
-#     if hotel_all is None:
-#         return JSONResponse(status_code=400,
-#                             content={"detail": "Bad Request"})
-#     return JSONResponse(status_code=200,content={"hotel": jsonable_encoder(hotel_all)})
+@router_hotel.get("/filter",responses=response_schemas.hotel_all_response)
+def get_all_hotel(name_hotel:str,city_hotel:str,page_number:int = 1,page_size:int=10) -> JSONResponse:
+    """ Get Filtered Hotel """
+    hotel_all=crud_hotel.get_hotel_filter(page_number=page_number,page_size=page_size,name_hotel=name_hotel,city_hotel=city_hotel)
+    if hotel_all is None:
+        return JSONResponse(status_code=400,
+                            content={"detail": "Bad Request"})
+    return JSONResponse(status_code=200,content={"hotel": jsonable_encoder(hotel_all)})

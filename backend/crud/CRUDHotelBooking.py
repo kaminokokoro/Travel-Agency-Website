@@ -35,7 +35,7 @@ class CRUDHotelBooking:
                 if hotel_booking_db is None:
                     return None
                 else:
-                    hotel_booking_db.user_id = hotel_booking.user_id
+                    # hotel_booking_db.user_id = hotel_booking.user_id
                     hotel_booking_db.check_in = hotel_booking.check_in
                     hotel_booking_db.check_out = hotel_booking.check_out
                     hotel_booking_db.number_of_room = hotel_booking.number_of_room
@@ -86,3 +86,6 @@ class CRUDHotelBooking:
             error = str(e.__dict__['orig'])
             print(error)
             return None
+
+
+crud_hotel_booking = CRUDHotelBooking()

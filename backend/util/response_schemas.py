@@ -188,3 +188,14 @@ hotel_all_response = {
     }
 
 }
+hotel_service_create_response = {}
+hotel_service_update_response = {}
+hotel_service_delete_response = {}
+hotel_service_get_response = {}
+hotel_service_all_response = {}
+
+hotel_booking_create_response = {}
+hotel_booking_update_response = {}
+hotel_booking_delete_response = {}
+hotel_booking_get_response = {}
+hotel_booking_all_response = {}

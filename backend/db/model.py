@@ -82,10 +82,10 @@ class UserCard(Base):
 class UserRatingHotel(Base):
     __tablename__ = "user_rating_hotel"
     id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
-    user_id = Column(String(36), ForeignKey('user_account.id'), unique=True)
+    user_id = Column(String(36), ForeignKey('user_account.id'),)
     # user = relationship("User", back_populates="rating")
     user = relationship("User", back_populates="user_rating_hotel")
-    hotel_id = Column(String(36), ForeignKey('hotel.id'), unique=True)
+    hotel_id = Column(String(36), ForeignKey('hotel.id'))
     hotel = relationship("Hotel", back_populates="rating")
     rating = Column(Integer)
     comment = Column(String(200))
@@ -93,10 +93,10 @@ class UserRatingHotel(Base):
 class UserRatingTour(Base):
     __tablename__ = "user_rating_tour"
     id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
-    user_id = Column(String(36), ForeignKey('user_account.id'), unique=True)
+    user_id = Column(String(36), ForeignKey('user_account.id'))
     # user = relationship("User", back_populates="rating")
     user = relationship("User", back_populates="user_rating_tour")
-    tour_id = Column(String(36), ForeignKey('tour.id'), unique=True)
+    tour_id = Column(String(36), ForeignKey('tour.id'))
     tour = relationship("Tour", back_populates="rating")
     rating = Column(Integer)
     comment = Column(String(200))
@@ -104,10 +104,10 @@ class UserRatingTour(Base):
 class UserRatingFlight(Base):
     __tablename__ = "user_rating_flight"
     id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
-    user_id = Column(String(36), ForeignKey('user_account.id'), unique=True)
+    user_id = Column(String(36), ForeignKey('user_account.id'))
     # user = relationship("User", back_populates="rating")
     user = relationship("User", back_populates="user_rating_flight")
-    flight_id = Column(String(36), ForeignKey('flight.id'), unique=True)
+    flight_id = Column(String(36), ForeignKey('flight.id'))
     flight = relationship("Flight", back_populates="rating")
     rating = Column(Integer)
     comment = Column(String(200))
@@ -145,7 +145,7 @@ class Tour(Base):
 class TourDate(Base):
     __tablename__ = "tour_date"
     id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
-    tour_id = Column(String(36), ForeignKey('tour.id'), unique=True)
+    tour_id = Column(String(36), ForeignKey('tour.id'))
     tour = relationship("Tour", back_populates="tour_date")
     # max_people = Column(Integer)
     departure_date = Column(DateTime)
@@ -214,7 +214,7 @@ class HotelServices(Base):
     room_capacity = Column(Integer, nullable=False)
     description = Column(String(200))
     price = Column(Integer, nullable=False)
-    hotel_id = Column(String(36), ForeignKey('hotel.id'), unique=True)
+    hotel_id = Column(String(36), ForeignKey('hotel.id'))
     hotel = relationship("Hotel", back_populates="services")
     hotel_booking = relationship("HotelBooking", back_populates="hotel_services",cascade="all, delete-orphan")
     # created_at = Column(DateTime)
@@ -264,7 +264,7 @@ class Flight(Base):
     departure_date = Column(DateTime)
     arrival_date= Column(DateTime)
     flight_ticket = relationship("FlightTicket", back_populates="flight",cascade="all, delete-orphan")
-    flight_provider_id = Column(String(36), ForeignKey('flight_provider.id'), unique=True)
+    flight_provider_id = Column(String(36), ForeignKey('flight_provider.id'))
     flight_provider = relationship("FlightProvider", back_populates="flight")
     rating = relationship("UserRatingFlight", back_populates="flight",cascade="all, delete-orphan")
     # created_at = Column(DateTime)
