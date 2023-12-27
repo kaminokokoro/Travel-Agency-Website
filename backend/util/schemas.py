@@ -104,3 +104,15 @@ class HotelBookingDelete(BaseModel):
     id : str
 
 
+class UserHotelRatingCreate(BaseModel):
+    user_id : str
+    hotel_id : str
+    rating : int
+    comment : str
+
+class UserHotelRatingUpdate(UserHotelRatingCreate):
+    id : str
+
+class UserHotelRatingDelete(BaseModel):
+    id : str
+

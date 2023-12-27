@@ -199,3 +199,10 @@ hotel_booking_update_response = {}
 hotel_booking_delete_response = {}
 hotel_booking_get_response = {}
 hotel_booking_all_response = {}
+
+user_hotel_rating_create_response = {}
+user_hotel_rating_update_response = {}
+user_hotel_rating_delete_response = {}
+user_hotel_rating_get_response = {}
+user_hotel_rating_all_response = {}
+
