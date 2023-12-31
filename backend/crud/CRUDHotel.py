@@ -1,4 +1,3 @@
-from fastapi.encoders import jsonable_encoder
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import and_, func
 from backend.db.db import session_scope
@@ -62,7 +61,7 @@ class CRUDHotel:
             print(error)
             return None
 
-    def get_hotel(self, hotel_id) :
+    def get_hotel(self, hotel_id):
         try:
             with session_scope() as db:
                 hotel_db = db.query(Hotel).filter(Hotel.id == hotel_id).first()
@@ -75,7 +74,7 @@ class CRUDHotel:
             print(error)
             return None
 
-    def get_all_hotel(self, page_number: int, page_size: int) :
+    def get_all_hotel(self, page_number: int, page_size: int):
         try:
             with session_scope() as db:
                 hotels = (
@@ -99,11 +98,13 @@ class CRUDHotel:
             print(error)
             return None
 
-    def get_hotel_filter(self,name_hotel,city_hotel, page_number: int, page_size: int) -> Hotel:
+    def get_hotel_filter(self, name_hotel, city_hotel, page_number: int, page_size: int) -> Hotel:
         try:
             with session_scope() as db:
                 # hotels = db.query(Hotel).filter(and_(Hotel.name==name_hotel,Hotel.city.like(f"{city_hotel}")))
-                hotels = db.query(Hotel).filter(and_(Hotel.name.like(f"%{name_hotel}%"), Hotel.city==city_hotel)).limit(page_size).offset((page_number - 1) * page_size).all()
+                hotels = db.query(Hotel).filter(
+                    and_(Hotel.name.like(f"%{name_hotel}%"), Hotel.city == city_hotel)).limit(page_size).offset(
+                    (page_number - 1) * page_size).all()
 
                 return hotels
         except SQLAlchemyError as e:

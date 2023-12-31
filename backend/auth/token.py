@@ -3,7 +3,7 @@ from typing import Dict
 import jwt
 # from jose import jwt
 from cryptography.hazmat.primitives.asymmetric import rsa
-
+from backend.config.ProjectSettings import private_key, public_key
 
 
 class AccessToken:
@@ -13,15 +13,20 @@ class AccessToken:
 
         self.__instance=jwt
         self.__algorithm = "RS256"
-        private_key = rsa.generate_private_key(
-            public_exponent=65537,
-            key_size=2048,
-        )
-        public_key = private_key.public_key()
+        # private_key = rsa.generate_private_key(
+        #     public_exponent=65537,
+        #     key_size=2048,
+        # )
+        # public_key = private_key.public_key()
+
+        # self.__signing_key = private_key
+        #
+        # self.__verifying_key = public_key
 
         self.__signing_key = private_key
 
         self.__verifying_key = public_key
+
 
     def create_access_token(self, *, data: dict,
                             expires_delta: timedelta = None) -> str:

@@ -14,16 +14,16 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 from backend.auth.token import access_token
 from backend.config import ProjectSettings
-from backend.crud.CRUDbase import crud_base
+
 from backend.crud.CRUDlogin import crud_login
-from backend.util import response_schemas,schemas
+from backend.util import response_schemas, schemas
 from backend.util.deps import get_current_user
 from backend.util.response_schemas import base_responses, user_response
 
 router_login = APIRouter()
 
 
-@router_login.post("/getToken",responses=response_schemas.get_token_response)
+@router_login.post("/getToken", responses=response_schemas.get_token_response)
 def authenticate_user(form_data: OAuth2PasswordRequestForm = Depends()) -> JSONResponse:
     """ Return Access Token"""
     db_user = crud_login.get_user_login(phone_number=form_data.username)
@@ -48,19 +48,20 @@ def authenticate_user(form_data: OAuth2PasswordRequestForm = Depends()) -> JSONR
                                          "token_type": "Bearer",
                                          })
 
+
 @router_login.post("/login",
-             responses=response_schemas.login_response)
-def login_user(user:  Annotated[
-        schemas.UserLogIn,
-        Body(openapi_examples={
-            "login": {
-                "summary": "Login",
-                "description": "Login User",
-                "value": {
-                    "phone_number": "123",
-                    "password": "123"
-                }}})]
-             ) -> JSONResponse:
+                   responses=response_schemas.login_response)
+def login_user(user: Annotated[
+    schemas.UserLogIn,
+    Body(openapi_examples={
+        "login": {
+            "summary": "Login",
+            "description": "Login User",
+            "value": {
+                "phone_number": "123",
+                "password": "123"
+            }}})]
+               ) -> JSONResponse:
     """ Login user and Return Access Token"""
 
     # print(user.phone_number,user.password)
@@ -88,9 +89,10 @@ def login_user(user:  Annotated[
             return JSONResponse(status_code=200,
                                 content={"access_token": token,
                                          "token_type": "Bearer",
-                                         "user_id":jsonable_encoder(db_user.id),
-                                         "phone_number":jsonable_encoder(user.phone_number),
-                                         "authorization":jsonable_encoder(db_user.authorization)})
+                                         "user_id": jsonable_encoder(db_user.id),
+                                         "phone_number": jsonable_encoder(user.phone_number),
+                                         "authorization": jsonable_encoder(db_user.authorization)})
+
 
 # @router_login.post("/login",
 #              responses=response_schemas.login_response)
@@ -124,12 +126,9 @@ def login_user(user:  Annotated[
 #                                          "token_type": "Bearer",
 #                                          "phone_number":jsonable_encoder(form_data.phone_number)})
 
-@router_login.get("/au_user",responses= response_schemas.user_response)
-def get_user(user: schemas.UserSchemas = Depends(get_current_user) ) -> JSONResponse:
+@router_login.get("/au_user", responses=response_schemas.user_response)
+def get_user(user: schemas.UserSchemas = Depends(get_current_user)) -> JSONResponse:
     """ Return User"""
     print(user)
     return JSONResponse(status_code=200,
                         content=jsonable_encoder(user))
-
-
-

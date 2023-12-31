@@ -1,5 +1,4 @@
 from typing import Any
-
 from backend.crud.CRUDbase import crud_base
 from backend.db.db import session_scope
 from backend.db.model import User

@@ -19,7 +19,7 @@ class User(Base):
     # rating = relationship("UserRating", back_populates="user",cascade="all, delete-orphan")
     user_rating_hotel = relationship("UserRatingHotel", back_populates="user",cascade="all, delete-orphan")
     user_rating_tour = relationship("UserRatingTour", back_populates="user",cascade="all, delete-orphan")
-    user_rating_flight = relationship("UserRatingFlight", back_populates="user",cascade="all, delete-orphan")
+    user_rating_flight = relationship("UserRatingFlightProvider", back_populates="user",cascade="all, delete-orphan")
     # payment = relationship("Payment", back_populates="user",cascade="all, delete-orphan")
     tour_booking = relationship("TourBooking", back_populates="user",cascade="all, delete-orphan")
     hotel_booking = relationship("HotelBooking", back_populates="user",cascade="all, delete-orphan")
@@ -101,14 +101,14 @@ class UserRatingTour(Base):
     rating = Column(Integer)
     comment = Column(String(200))
 
-class UserRatingFlight(Base):
-    __tablename__ = "user_rating_flight"
+class UserRatingFlightProvider(Base):
+    __tablename__ = "user_rating_flight_provider"
     id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
     user_id = Column(String(36), ForeignKey('user_account.id'))
     # user = relationship("User", back_populates="rating")
     user = relationship("User", back_populates="user_rating_flight")
-    flight_id = Column(String(36), ForeignKey('flight.id'))
-    flight = relationship("Flight", back_populates="rating")
+    flight_provider_id = Column(String(36), ForeignKey('flight_provider.id'))
+    flight_provider = relationship("FlightProvider", back_populates="rating")
     rating = Column(Integer)
     comment = Column(String(200))
 
@@ -148,8 +148,8 @@ class TourDate(Base):
     tour_id = Column(String(36), ForeignKey('tour.id'))
     tour = relationship("Tour", back_populates="tour_date")
     # max_people = Column(Integer)
-    departure_date = Column(DateTime)
-    return_date = Column(DateTime)
+    departure_datetime = Column(DateTime)
+    return_datetime = Column(DateTime)
     tour_booking = relationship("TourBooking", back_populates="tour_date",cascade="all, delete-orphan")
 
 # class TourItinerary(Base):
@@ -252,7 +252,7 @@ class FlightProvider(Base):
     email = Column(String(200))
     phone_number = Column(String(20))
     flight = relationship("Flight", back_populates="flight_provider",cascade="all, delete-orphan")
-
+    rating = relationship("UserRatingFlightProvider", back_populates="flight_provider",cascade="all, delete-orphan")
 
 class Flight(Base):
     __tablename__ = "flight"
@@ -266,7 +266,7 @@ class Flight(Base):
     flight_ticket = relationship("FlightTicket", back_populates="flight",cascade="all, delete-orphan")
     flight_provider_id = Column(String(36), ForeignKey('flight_provider.id'))
     flight_provider = relationship("FlightProvider", back_populates="flight")
-    rating = relationship("UserRatingFlight", back_populates="flight",cascade="all, delete-orphan")
+
     # created_at = Column(DateTime)
     # updated_at = Column(DateTime)
     # deleted_at = Column(DateTime)

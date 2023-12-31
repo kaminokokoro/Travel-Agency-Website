@@ -1,5 +1,4 @@
 from backend.db.db import session_scope
-from backend.util import passutil
 from backend.db.model import User, Base
 
 class CRUDbase:

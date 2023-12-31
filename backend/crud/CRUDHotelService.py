@@ -97,13 +97,20 @@ class CRUDHotelService:
             return None
 
     def get_hotel_service_filter(self, name_hotel, city_hotel, page_number: int = 1,
-                                 page_size: int = 10) -> HotelServices:
+                                 page_size: int = 10) :
         try:
             with session_scope() as db:
-                hotel_service_db = db.query(HotelServices).join(Hotel).filter(
-                    and_(Hotel.name.like(f"%{name_hotel}%"),
-                         Hotel.city == city_hotel)
-                ).limit(page_size).offset((page_number - 1) * page_size).all()
+                if name_hotel is None:
+                    name_hotel = ""
+                if city_hotel is None:
+                    hotel_service_db = db.query(HotelServices).join(Hotel).filter(
+                        Hotel.name.like(f"%{name_hotel}%")).limit(page_size).offset(
+                        (page_number - 1) * page_size).all()
+                else:
+                    hotel_service_db = db.query(HotelServices).join(Hotel).filter(
+                        and_(Hotel.name.like(f"%{name_hotel}%"),
+                             Hotel.city == city_hotel)
+                    ).limit(page_size).offset((page_number - 1) * page_size).all()
 
                 # hotel_db= db.query(Hotel).filter(
                 #     and_(Hotel.name.like(f"%{name_hotel}%"),

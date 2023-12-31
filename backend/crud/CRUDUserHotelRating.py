@@ -1,7 +1,6 @@
 from backend.db.model import UserRatingHotel, generate_uuid
 from backend.util import schemas
 from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy import and_
 from backend.db.db import session_scope
 
 class CRUDUserHotelRating:

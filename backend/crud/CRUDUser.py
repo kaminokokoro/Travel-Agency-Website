@@ -1,5 +1,3 @@
-import datetime
-
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import and_
 from backend.db.db import session_scope
