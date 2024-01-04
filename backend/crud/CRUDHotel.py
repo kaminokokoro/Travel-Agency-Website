@@ -102,10 +102,13 @@ class CRUDHotel:
         try:
             with session_scope() as db:
                 # hotels = db.query(Hotel).filter(and_(Hotel.name==name_hotel,Hotel.city.like(f"{city_hotel}")))
-                hotels = db.query(Hotel).filter(
-                    and_(Hotel.name.like(f"%{name_hotel}%"), Hotel.city == city_hotel)).limit(page_size).offset(
-                    (page_number - 1) * page_size).all()
-
+                if  city_hotel == "":
+                    hotels = db.query(Hotel).filter(Hotel.name.like(f"%{name_hotel}%")).limit(page_size).offset(
+                        (page_number - 1) * page_size).all()
+                else:
+                    hotels = db.query(Hotel).filter(
+                        and_(Hotel.name.like(f"%{name_hotel}%"), Hotel.city == city_hotel)).limit(page_size).offset(
+                        (page_number - 1) * page_size).all()
                 return hotels
         except SQLAlchemyError as e:
             error = str(e.__dict__['orig'])

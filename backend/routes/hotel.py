@@ -12,6 +12,7 @@ router_hotel = APIRouter()
 router_hotel.include_router(router_hotel_service, prefix='/service', tags=['Hotel Service'])
 router_hotel.include_router(router_hotel_booking, prefix='/service/booking', tags=['Hotel Booking'])
 
+
 @router_hotel.post("/", responses=response_schemas.hotel_create_response)
 def create_hotel(hotel: schemas.HotelCreate,
                  current_user: schemas.UserVerify = Depends(get_current_user)) -> JSONResponse:
@@ -73,11 +74,14 @@ def get_all_hotel(page_number: int = 1, page_size: int = 10) -> JSONResponse:
                             content={"detail": "Bad Request"})
     return JSONResponse(status_code=200, content={"hotel": jsonable_encoder(hotel_all)})
 
-@router_hotel.get("/filter",responses=response_schemas.hotel_all_response)
-def get_all_hotel(name_hotel:str,city_hotel:str,page_number:int = 1,page_size:int=10) -> JSONResponse:
+
+@router_hotel.get("/filter", responses=response_schemas.hotel_all_response)
+def get_all_hotel(name_hotel: str = "", city_hotel: str = "", page_number: int = 1,
+                  page_size: int = 10) -> JSONResponse:
     """ Get Filtered Hotel """
-    hotel_all=crud_hotel.get_hotel_filter(page_number=page_number,page_size=page_size,name_hotel=name_hotel,city_hotel=city_hotel)
+    hotel_all = crud_hotel.get_hotel_filter(page_number=page_number, page_size=page_size, name_hotel=name_hotel,
+                                            city_hotel=city_hotel)
     if hotel_all is None:
         return JSONResponse(status_code=400,
                             content={"detail": "Bad Request"})
-    return JSONResponse(status_code=200,content={"hotel": jsonable_encoder(hotel_all)})
+    return JSONResponse(status_code=200, content={"hotel": jsonable_encoder(hotel_all)})

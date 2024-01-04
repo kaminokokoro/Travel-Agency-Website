@@ -240,7 +240,6 @@ class TourCreate(BaseModel):
     name: str
     description: str
     duration: int
-    departure: str
     destination: str
     adult_price: int
     child_price: int
@@ -285,3 +284,4 @@ class TourDateUpdate(TourDateCreate):
 
 class TourDateDelete(BaseModel):
     id: str
+

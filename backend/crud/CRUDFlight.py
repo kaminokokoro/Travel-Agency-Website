@@ -12,8 +12,8 @@ class CRUDFlight:
         try:
             with session_scope() as db:
                 flight_db = Flight(id=generate_uuid(), name=flight.name, departure=flight.departure,
-                                 arrival=flight.arrival, departure_time=flight.departure_time,
-                                 arrival_time=flight.arrival_time, price=flight.price)
+                                   arrival=flight.arrival, departure_time=flight.departure_time,
+                                   arrival_time=flight.arrival_time, price=flight.price)
                 db.add(flight_db)
                 db.commit()
                 db.refresh(flight_db)
@@ -72,16 +72,18 @@ class CRUDFlight:
             print(error)
             return None
 
-    def get_all_flights_filter(self,departure_from,arrival_to,datetime_from,datetime_to ,page_number: int, page_size: int) :
+    def get_all_flights_filter(self, departure_from, arrival_to, datetime_from, datetime_to, page_number: int,
+                               page_size: int):
         try:
             with session_scope() as db:
-                if datetime_from is None:
+                if datetime_from == "":
                     datetime_from = func.now()
-                if datetime_to is None:
-                    datetime_to = func.now()+func.interval(30,'day')
-                flight_db = db.query(Flight).filter(and_(Flight.departure == departure_from,Flight.arrival == arrival_to,
-                                                         Flight.departure_time >= datetime_from,
-                                                         Flight.departure_time <= datetime_to)).limit(
+                if datetime_to == "":
+                    datetime_to = func.now() + func.interval(30, 'day')
+                flight_db = db.query(Flight).filter(
+                    and_(Flight.departure == departure_from, Flight.arrival == arrival_to,
+                         Flight.departure_time >= datetime_from,
+                         Flight.departure_time <= datetime_to)).limit(
                     page_size).offset((page_number - 1) * page_size).all()
                 if flight_db is None:
                     return None

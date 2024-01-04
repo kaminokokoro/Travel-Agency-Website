@@ -5,19 +5,21 @@ from fastapi.responses import JSONResponse
 from backend.routes.hotel import router_hotel
 from backend.routes.login import router_login
 from backend.routes.user import router_user
+from backend.routes.tour import router_tour
 from backend.routes.user_hotel_rating import router_user_hotel_rating
 
 # REST API Settings
-app = FastAPI()
+app = FastAPI(description="Sample Server")
 
 # API Routers
 
 
 
-app.include_router(router_login, prefix='',tags=['Login'])
+app.include_router(router_login, prefix='', tags=['Login'])
 app.include_router(router_user, prefix='/user',tags=['User'])
 app.include_router(router_hotel, prefix='/hotel',tags=['Hotel'])
 app.include_router(router_user_hotel_rating, prefix='/hotel-rating',tags=['User Hotel Rating'])
+app.include_router(router_tour, prefix='/tour',tags=['Tour'])
 
 
 

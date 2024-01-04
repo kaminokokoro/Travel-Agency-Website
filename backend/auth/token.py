@@ -1,9 +1,13 @@
 from datetime import datetime, timedelta
 from typing import Dict
+
+
 import jwt
 # from jose import jwt
 from cryptography.hazmat.primitives.asymmetric import rsa
-from backend.config.ProjectSettings import private_key, public_key
+
+
+# from backend.config.ProjectSettings import private_key, public_key
 
 
 class AccessToken:
@@ -11,22 +15,17 @@ class AccessToken:
 
     def __init__(self):
 
-        self.__instance=jwt
+        self.__instance = jwt
         self.__algorithm = "RS256"
-        # private_key = rsa.generate_private_key(
-        #     public_exponent=65537,
-        #     key_size=2048,
-        # )
-        # public_key = private_key.public_key()
-
-        # self.__signing_key = private_key
-        #
-        # self.__verifying_key = public_key
+        private_key = rsa.generate_private_key(
+            public_exponent=65537,
+            key_size=2048
+        )
+        public_key = private_key.public_key()
 
         self.__signing_key = private_key
 
         self.__verifying_key = public_key
-
 
     def create_access_token(self, *, data: dict,
                             expires_delta: timedelta = None) -> str:
@@ -44,7 +43,7 @@ class AccessToken:
 
     def decode_access_token(self, *, token: str) -> Dict:
         """ Decode Access Token """
-        return self.__instance.decode(token, self.__verifying_key,self.__algorithm,
+        return self.__instance.decode(token, self.__verifying_key, self.__algorithm,
                                       do_time_check=False)
 
 

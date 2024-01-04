@@ -13,7 +13,7 @@ class CRUDTour:
             with session_scope() as db:
                 tour_db = Tour(id=generate_uuid(),
                                name=tour.name, description=tour.description, duration=tour.duration,
-                               departure=tour.departure, destination=tour.destination, adult_price=tour.adult_price,
+                               destination=tour.destination, adult_price=tour.adult_price,
                                child_price=tour.child_price
                                )
                 db.add(tour_db)
@@ -35,7 +35,6 @@ class CRUDTour:
                     tour_db.name = tour.name
                     tour_db.description = tour.description
                     tour_db.duration = tour.duration
-                    tour_db.departure = tour.departure
                     tour_db.destination = tour.destination
                     tour_db.adult_price = tour.adult_price
                     tour_db.child_price = tour.child_price
@@ -75,9 +74,8 @@ class CRUDTour:
     def get_all_tour_filter(self, page_number, page_size, destination, name):
         try:
             with session_scope() as db:
-                if name is None:
-                    name = ""
-                if destination is None:
+
+                if destination == "":
                     tour_db = db.query(Tour).filter(Tour.name.like(f"%{name}%")).limit(page_size).offset(
                         (page_number - 1) * page_size).all()
                 else:

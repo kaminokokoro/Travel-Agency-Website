@@ -206,3 +206,32 @@ user_hotel_rating_delete_response = {}
 user_hotel_rating_get_response = {}
 user_hotel_rating_all_response = {}
 
+tour_create_response = {}
+tour_update_response = {}
+tour_delete_response = {}
+tour_get_response = {}
+tour_get_all_response = {}
+
+tour_booking_create_response = {}
+tour_booking_update_response = {}
+tour_booking_delete_response = {}
+tour_booking_get_response = {}
+tour_booking_all_response = {}
+
+user_tour_rating_create_response = {}
+user_tour_rating_update_response = {}
+user_tour_rating_delete_response = {}
+user_tour_rating_get_response = {}
+user_tour_rating_all_response = {}
+
+tour_service_create_response = {}
+tour_service_update_response = {}
+tour_service_delete_response = {}
+tour_service_get_response = {}
+tour_service_all_response = {}
+
+tour_date_create_response = {}
+tour_date_update_response = {}
+tour_date_delete_response = {}
+tour_date_get_response = {}
+all_tour_date_response = {}

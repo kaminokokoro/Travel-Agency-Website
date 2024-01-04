@@ -1,3 +1,4 @@
+from sqlalchemy import func, and_
 from sqlalchemy.exc import SQLAlchemyError
 from backend.db.db import session_scope
 from backend.db.model import TourDate, generate_uuid
@@ -55,11 +56,38 @@ class CRUDTourDate:
             print(error)
             return None
 
-
-    def get_tour_date_by_id(self, tour_date: schemas.TourDateGet) -> TourDate:
+    def get_tour_date_by_id(self, tour_date_id) -> TourDate:
         try:
             with session_scope() as db:
-                tour_date_db = db.query(TourDate).filter(TourDate.id == tour_date.id).first()
+                tour_date_db = db.query(TourDate).filter(TourDate.id == tour_date_id).first()
+                if tour_date_db is None:
+                    return None
+                else:
+                    return tour_date_db
+        except SQLAlchemyError as e:
+            error = str(e.__dict__['orig'])
+            print(error)
+            return None
+
+    def get_tour_date_from_now_by_tour_id_(self, tour_id) -> TourDate:
+        try:
+            with session_scope() as db:
+                datetime_now = func.now()
+                tour_date_db = db.query(TourDate).filter(
+                    and_(TourDate.tour_id == tour_id, TourDate.departure_datetime >= datetime_now)).all()
+                if tour_date_db is None:
+                    return None
+                else:
+                    return tour_date_db
+        except SQLAlchemyError as e:
+            error = str(e.__dict__['orig'])
+            print(error)
+            return None
+
+    def get_tour_date_by_tour_id(self, tour_id, page_num, page_size) -> TourDate:
+        try:
+            with session_scope() as db:
+                tour_date_db = db.query(TourDate).filter(TourDate.tour_id == tour_id).offset((page_num - 1) * page_size).limit(page_size).all()
                 if tour_date_db is None:
                     return None
                 else:
@@ -70,15 +98,4 @@ class CRUDTourDate:
             return None
 
 
-    def get_tour_date_by_tour_id(self, tour_date: schemas.TourDateGet) -> TourDate:
-        try:
-            with session_scope() as db:
-                tour_date_db = db.query(TourDate).filter(TourDate.tour_id == tour_date.tour_id).first()
-                if tour_date_db is None:
-                    return None
-                else:
-                    return tour_date_db
-        except SQLAlchemyError as e:
-            error = str(e.__dict__['orig'])
-            print(error)
-            return None
+crud_tour_date = CRUDTourDate()
