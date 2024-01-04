@@ -8,8 +8,7 @@ from backend.db.model import Base, User
 
 
 # from model import User,Base
-connection_string = "mysql+mysqlconnector://root:alotelope@localhost/travel_agency"
-# connection_string = "mysql+pymysql:root:@localhost:3306/travelAgency"
+connection_string = "mysql+mysqlconnector://root:mocbop123@localhost/travel_agency_v1"
 engine = create_engine(connection_string, echo=True)
 
 
