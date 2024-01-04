@@ -9,7 +9,6 @@ from backend.util import response_schemas, schemas
 from backend.util.deps import get_current_user
 
 router_tour = APIRouter()
-router_tour.include_router(router_tour_date, prefix="/date", tags=["tour_date"])
 
 @router_tour.post("/", responses=response_schemas.tour_create_response)
 def create_tour(tour: schemas.TourCreate,

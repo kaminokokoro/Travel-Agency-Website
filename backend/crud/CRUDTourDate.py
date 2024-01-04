@@ -69,7 +69,7 @@ class CRUDTourDate:
             print(error)
             return None
 
-    def get_tour_date_from_now_by_tour_id_(self, tour_id) -> TourDate:
+    def get_tour_date_from_now_by_tour_id(self, tour_id) -> TourDate:
         try:
             with session_scope() as db:
                 datetime_now = func.now()

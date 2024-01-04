@@ -63,16 +63,16 @@ def get_tour_date(tour_date_id) -> JSONResponse:
 
 
 @router_tour_date.get("/all", responses=response_schemas.all_tour_date_response)
-def get_tour_date_by_tour_id(tour_id) -> JSONResponse:
+def get_tour_date_by_tour_id(tour_id,page_num:int=1,page_size:int = 10) -> JSONResponse:
     """ Get all Tour Date in a Tour by tour_id"""
-    tour_date_get_all = crud_tour_date.get_tour_date_by_tour_id_(tour_id=tour_id)
+    tour_date_get_all = crud_tour_date.get_tour_date_by_tour_id(tour_id=tour_id,page_num=page_num,page_size=page_size)
     if tour_date_get_all is None:
         return JSONResponse(status_code=400,
                             content={"detail": "Bad Request"})
     return JSONResponse(status_code=200, content=jsonable_encoder(tour_date_get_all))
 
 
-@router_tour_date.get("/all/available", responses=response_schemas.all_tour_date_response)
+@router_tour_date.get("/available", responses=response_schemas.all_tour_date_response)
 def get_tour_date_by_tour_id(tour_id) -> JSONResponse:
     """ Get all Tour Date available in a Tour by tour_id"""
     tour_date_get_all = crud_tour_date.get_tour_date_from_now_by_tour_id(tour_id=tour_id)

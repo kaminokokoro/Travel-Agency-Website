@@ -285,3 +285,6 @@ class TourDateUpdate(TourDateCreate):
 class TourDateDelete(BaseModel):
     id: str
 
+class UserSchemasCustomer(BaseModel):
+    phone_number: str
+    password: str

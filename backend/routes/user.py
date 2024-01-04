@@ -10,13 +10,15 @@ from backend.util.deps import get_current_user
 router_user = APIRouter()
 
 @router_user.post("/customer",responses=response_schemas.user_create_response)
-def create_customer(user: schemas.UserSchemas) -> JSONResponse:
+def create_customer(user: schemas.UserSchemasCustomer) -> JSONResponse:
     """ Create Customer User"""
     db_user = crud_user.get_user_by_phone_number(phone_number=user.phone_number)
     if db_user is None:
-        if user.authorization != 1:
-            user.authorization = 1
-        user_create=crud_user.create_user(user=user)
+        user_schemas: schemas.UserSchemas = schemas.UserSchemas(
+            phone_number=user.phone_number,
+            password=user.password,
+            authorization=1)
+        user_create=crud_user.create_user(user=user_schemas)
         if user_create is None:
             return JSONResponse(status_code=400,
                                 content={"detail": "Bad Request"})
