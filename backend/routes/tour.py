@@ -3,7 +3,6 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
 from backend.crud.CRUDTour import crud_tour
-from backend.routes.tour_date import router_tour_date
 
 from backend.util import response_schemas, schemas
 from backend.util.deps import get_current_user
@@ -67,6 +66,16 @@ def get_all_tour(page_number: int = 1, page_size: int = 10, destination: str = "
     """ Get All filtered Tour"""
     tour_get_all = crud_tour.get_all_tour_filter(page_number=page_number, page_size=page_size, destination=destination,
                                                  name=name)
+    if tour_get_all is None:
+        return JSONResponse(status_code=400,
+                            content={"detail": "Bad Request"})
+    return JSONResponse(status_code=200, content=jsonable_encoder(tour_get_all))
+
+
+@router_tour.get("/all", responses=response_schemas.tour_get_all_response)
+def get_all_tour(page_number: int = 1, page_size: int = 10) -> JSONResponse:
+    """ Get All Tour"""
+    tour_get_all = crud_tour.get_all_tour(page_number=page_number, page_size=page_size)
     if tour_get_all is None:
         return JSONResponse(status_code=400,
                             content={"detail": "Bad Request"})

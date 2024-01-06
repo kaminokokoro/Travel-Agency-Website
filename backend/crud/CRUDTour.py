@@ -89,5 +89,16 @@ class CRUDTour:
             print(error)
             return None
 
+    def get_all_tour(self, page_number, page_size):
+        try:
+            with session_scope() as db:
+                tour_db = db.query(Tour).limit(page_size).offset((page_number - 1) * page_size).all()
+                return tour_db
+        except SQLAlchemyError as e:
+            error = str(e.__dict__['orig'])
+            print(error)
+            return None
+
+
 
 crud_tour = CRUDTour()

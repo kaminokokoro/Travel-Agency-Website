@@ -216,7 +216,7 @@ tour_booking_create_response = {}
 tour_booking_update_response = {}
 tour_booking_delete_response = {}
 tour_booking_get_response = {}
-tour_booking_all_response = {}
+all_tour_booking_response = {}
 
 user_tour_rating_create_response = {}
 user_tour_rating_update_response = {}
@@ -235,3 +235,10 @@ tour_date_update_response = {}
 tour_date_delete_response = {}
 tour_date_get_response = {}
 all_tour_date_response = {}
+
+
+flight_create_response = {}
+flight_update_response = {}
+flight_delete_response = {}
+flight_get_response = {}
+flight_get_all_response = {}

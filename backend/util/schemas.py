@@ -288,3 +288,16 @@ class TourDateDelete(BaseModel):
 class UserSchemasCustomer(BaseModel):
     phone_number: str
     password: str
+
+class UserTourRatingCreate(BaseModel):
+    user_id: str
+    tour_id: str
+    rating: int
+    comment: str
+
+class UserTourRatingUpdate(UserTourRatingCreate):
+    id: str
+
+class UserTourRatingDelete(BaseModel):
+    id: str
+
