@@ -4,9 +4,6 @@ import { DEMO_EXPERIENCES_LISTINGS } from "data/listings";
 import { ExperiencesDataType } from "data/types";
 import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
-import BtnLikeIcon from "components/BtnLikeIcon/BtnLikeIcon";
-import SaleOffBadge from "components/SaleOffBadge/SaleOffBadge";
-import Badge from "shared/Badge/Badge";
 
 export interface ExperiencesCardProps {
   className?: string;
@@ -28,9 +25,6 @@ const ExperiencesCard: FC<ExperiencesCardProps> = ({
     address,
     title,
     href,
-    // like,
-    // saleOff,
-    // isAds,
     price,
     reviewStart,
     reviewCount,
@@ -46,8 +40,6 @@ const ExperiencesCard: FC<ExperiencesCardProps> = ({
           galleryImgs={galleryImgs}
           href={href}
         />
-        {/* <BtnLikeIcon isLiked={like} className="absolute right-3 top-3" /> */}
-        {/* {saleOff && <SaleOffBadge className="absolute left-3 top-3" />} */}
       </div>
     );
   };
@@ -83,7 +75,6 @@ const ExperiencesCard: FC<ExperiencesCardProps> = ({
           </div>
 
           <div className="flex items-center space-x-2">
-            {/* {isAds && <Badge name="ADS" color="green" />} */}
             <h2
               className={` font-medium capitalize ${
                 size === "default" ? "text-base" : "text-base"

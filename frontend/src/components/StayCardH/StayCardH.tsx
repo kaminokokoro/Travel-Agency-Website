@@ -4,9 +4,6 @@ import { DEMO_STAY_LISTINGS } from "data/listings";
 import { StayDataType } from "data/types";
 import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
-// import BtnLikeIcon from "components/BtnLikeIcon/BtnLikeIcon";
-// import SaleOffBadge from "components/SaleOffBadge/SaleOffBadge";
-// import Badge from "shared/Badge/Badge";
 
 export interface StayCardHProps {
   className?: string;
@@ -25,7 +22,6 @@ const StayCardH: FC<StayCardHProps> = ({
     address,
     title,
     href,
-    // like,
     price,
     reviewStart,
     reviewCount,
@@ -41,7 +37,6 @@ const StayCardH: FC<StayCardHProps> = ({
           uniqueID={`StayCardH_${id}`}
           href={href}
         />
-        {/* <BtnLikeIcon isLiked={like} className="absolute right-3 top-3" /> */}
       </div>
     );
   };

@@ -1,7 +1,6 @@
 import React, { FC, Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import GuestsInput from "./HeroSearchForm2Mobile/GuestsInput";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
 
 interface ModalSelectGuestsProps {
@@ -63,11 +62,6 @@ const ModalSelectGuests: FC<ModalSelectGuestsProps> = ({ renderChildren }) => {
                     <div className="flex-1 pt-12 p-1 flex flex-col overflow-hidden">
                       <div className="flex-1 flex flex-col overflow-hidden bg-white dark:bg-neutral-800">
                         <div className="flex-1 flex flex-col transition-opacity animate-[myblur_0.4s_ease-in-out] overflow-auto">
-                          <div
-                            className={`flex-1 relative flex z-10 overflow-hidden`}
-                          >
-                            <GuestsInput />
-                          </div>
                         </div>
                       </div>
                     </div>

@@ -4,11 +4,9 @@ import React from "react";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import SectionOurFeatures from "components/SectionOurFeatures/SectionOurFeatures";
 import SectionGridFeaturePlaces from "./SectionGridFeaturePlaces";
-import SectionHowItWork from "components/SectionHowItWork/SectionHowItWork";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import { TaxonomyType } from "data/types";
-import SectionVideos from "./SectionVideos";
 
 const DEMO_CATS: TaxonomyType[] = [
   {
@@ -132,7 +130,7 @@ function PageHome() {
         />
 
         {/* SECTION2 */}
-        {/* <SectionOurFeatures /> */}
+        <SectionOurFeatures />
 
         {/* SECTION */}
         <div className="relative py-16">
@@ -140,8 +138,6 @@ function PageHome() {
           <SectionGridFeaturePlaces />
         </div>
 
-        {/* SECTION */}
-        {/* <SectionHowItWork /> */}
 
         {/* SECTION 1 */}
         <div className="relative py-16">
@@ -157,9 +153,6 @@ function PageHome() {
           />
         </div>
 
-        {/* SECTION */}
-        {/* <SectionVideos /> */}
-        {/* SECTION */}
         <SectionSubscribe2 />
 
       </div>

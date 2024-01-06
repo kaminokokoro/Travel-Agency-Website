@@ -7,6 +7,8 @@ import CardCategory4 from "components/CardCategory4/CardCategory4";
 import NextPrev from "shared/NextPrev/NextPrev";
 import CardCategory5 from "components/CardCategory5/CardCategory5";
 import useNcId from "hooks/useNcId";
+import CardCategory1 from "components/CardCategory1/CardCategory1";
+import CardCategory6 from "components/CardCategory6/CardCategory6";
 
 export interface SectionSliderNewCategoriesProps {
   className?: string;

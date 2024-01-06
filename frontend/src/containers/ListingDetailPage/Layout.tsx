@@ -6,7 +6,6 @@ import ListingImageGallery from "components/ListingImageGallery/ListingImageGall
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
-import MobileFooterSticky from "./(components)/MobileFooterSticky";
 
 const DetailPagetLayout = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
@@ -56,9 +55,6 @@ const DetailPagetLayout = ({ children }: { children: ReactNode }) => {
         </div>
         <SectionSubscribe2 className="pt-24 lg:pt-32" />
       </div>
-
-      {/* STICKY FOOTER MOBILE */}
-      <MobileFooterSticky />
     </div>
   );
 };

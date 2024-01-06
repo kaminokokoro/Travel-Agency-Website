@@ -161,7 +161,7 @@ const SiteHeader = () => {
       <Helmet>
         <title>LU</title>
       </Helmet>
-      {/* {renderControlSelections()} */}
+      {renderControlSelections()}
       {renderHeader()}
       <div ref={anchorRef} className="h-1 absolute invisible"></div>
     </>
