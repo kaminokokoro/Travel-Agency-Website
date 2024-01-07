@@ -237,8 +237,37 @@ tour_date_get_response = {}
 all_tour_date_response = {}
 
 
+flight_provider_create_response = {}
+flight_provider_update_response = {}
+flight_provider_delete_response = {}
+flight_provider_get_response = {}
+flight_provider_get_all_response = {}
+
 flight_create_response = {}
 flight_update_response = {}
 flight_delete_response = {}
 flight_get_response = {}
 flight_get_all_response = {}
+
+flight_ticket_create_response = {}
+flight_ticket_update_response = {}
+flight_ticket_delete_response = {}
+flight_ticket_get_response = {}
+flight_ticket_get_all_response = {}
+
+flight_booking_create_response = {}
+flight_booking_update_response = {}
+flight_booking_delete_response = {}
+flight_booking_get_response = {}
+flight_booking_get_all_response = {}
+
+user_flight_provider_rating_create_response = {}
+user_flight_provider_rating_update_response = {}
+user_flight_provider_rating_delete_response = {}
+user_flight_provider_rating_get_response = {}
+user_flight_provider_rating_get_all_response = {}
+
+
+
+
+

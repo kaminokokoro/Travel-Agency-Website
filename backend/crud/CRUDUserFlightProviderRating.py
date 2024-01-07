@@ -66,7 +66,7 @@ class CRUDUserFlightProviderRating:
                 print(error)
                 return None
 
-        def get_user_flight_provider_rating_by_user_id(self, user_id) -> UserRatingFlightProvider:
+        def get_all_user_flight_provider_rating_by_user_id(self, user_id) -> UserRatingFlightProvider:
             try:
                 with session_scope() as db:
                     user_flight_provider_rating_db = db.query(UserRatingFlightProvider).filter(UserRatingFlightProvider.user_id == user_id).all()
@@ -76,7 +76,7 @@ class CRUDUserFlightProviderRating:
                 print(error)
                 return None
 
-        def get_user_flight_provider_rating_by_flight_provider_id(self, flight_provider_id) -> UserRatingFlightProvider:
+        def get_all_user_flight_provider_rating_by_flight_provider_id(self, flight_provider_id) -> UserRatingFlightProvider:
             try:
                 with session_scope() as db:
                     user_flight_provider_rating_db = db.query(UserRatingFlightProvider).filter(UserRatingFlightProvider.flight_provider_id == flight_provider_id).all()

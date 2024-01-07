@@ -9,8 +9,7 @@ from backend.util import response_schemas, schemas
 from backend.util.deps import get_current_user
 
 router_hotel = APIRouter()
-router_hotel.include_router(router_hotel_service, prefix='/service', tags=['Hotel Service'])
-router_hotel.include_router(router_hotel_booking, prefix='/service/booking', tags=['Hotel Booking'])
+
 
 
 @router_hotel.post("/", responses=response_schemas.hotel_create_response)

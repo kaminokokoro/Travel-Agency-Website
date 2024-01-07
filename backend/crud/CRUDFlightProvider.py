@@ -72,7 +72,7 @@ class CRUDFlightProvider:
     def get_all_flight_providers_by_rating(self):
         try:
             with session_scope() as db:
-                flight_providers = db.query(FlightProvider).join(UserRatingFlightProvider, FlightProvider.id == UserRatingFlightProvider.flight_provider_id).group_by(FlightProvider.id).order_by(func.avg(UserRatingFlightProvider.rating).desc()).all()
+                flight_providers = db.query(FlightProvider).outerjoin(UserRatingFlightProvider, FlightProvider.id == UserRatingFlightProvider.flight_provider_id).group_by(FlightProvider.id).order_by(func.avg(UserRatingFlightProvider.rating).desc()).all()
                 return flight_providers
         except SQLAlchemyError as e:
             error = str(e.__dict__['orig'])

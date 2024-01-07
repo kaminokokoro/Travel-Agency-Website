@@ -54,11 +54,22 @@ def delete_hotel_booking(hotel_booking: schemas.HotelBookingDelete,
 @router_hotel_booking.get("/", responses=response_schemas.hotel_booking_get_response)
 def get_hotel_booking(hotel_booking_id,current_user: schemas.UserVerify = Depends(get_current_user)) -> JSONResponse:
     """ Get Hotel Booking"""
-
     hotel_booking_get = crud_hotel_booking.get_hotel_booking(hotel_booking_id=hotel_booking_id)
     if current_user.id != hotel_booking_get.user_id and current_user.authorization == 1:
         return JSONResponse(status_code=401,
                             content={"detail": "Unauthorized"})
+    if hotel_booking_get is None:
+        return JSONResponse(status_code=400,
+                            content={"detail": "Bad Request"})
+    return JSONResponse(status_code=200, content={"hotel_booking": jsonable_encoder(hotel_booking_get)})
+
+@router_hotel_booking.get("/user", responses=response_schemas.hotel_booking_get_response)
+def get_hotel_booking_by_user_id(user_id,current_user: schemas.UserVerify = Depends(get_current_user)) -> JSONResponse:
+    """ Get Hotel Booking"""
+    if current_user.id != user_id and current_user.authorization == 1:
+        return JSONResponse(status_code=401,
+                            content={"detail": "Unauthorized"})
+    hotel_booking_get = crud_hotel_booking.get_all_hotel_booking_by_user_id(user_id=user_id)
     if hotel_booking_get is None:
         return JSONResponse(status_code=400,
                             content={"detail": "Bad Request"})
