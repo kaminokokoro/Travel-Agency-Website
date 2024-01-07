@@ -3,7 +3,6 @@ import GallerySlider from "components/GallerySlider/GallerySlider";
 import { DEMO_STAY_LISTINGS } from "data/listings";
 import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
-// import BtnLikeIcon from "components/BtnLikeIcon/BtnLikeIcon";
 import Badge from "shared/Badge/Badge";
 import { StayDataType } from "data/types";
 
@@ -22,7 +21,6 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
     galleryImgs,
     title,
     href,
-    // like,
     price,
     reviewStart,
     reviewCount,
@@ -129,11 +127,6 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
         {renderSliderGallery()}
         {renderContent()}
       </div>
-      {/* <BtnLikeIcon
-        colorClass={` bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 hover:bg-opacity-70 text-neutral-6000 dark:text-neutral-400`}
-        isLiked={like}
-        className="absolute right-5 top-5 sm:right-3 sm:top-3 "
-      /> */}
     </div>
   );
 };

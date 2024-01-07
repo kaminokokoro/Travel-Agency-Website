@@ -4,10 +4,6 @@ import { DEMO_EXPERIENCES_LISTINGS } from "data/listings";
 import { ExperiencesDataType } from "data/types";
 import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
-import BtnLikeIcon from "components/BtnLikeIcon/BtnLikeIcon";
-import SaleOffBadge from "components/SaleOffBadge/SaleOffBadge";
-import Badge from "shared/Badge/Badge";
-import Avatar from "shared/Avatar/Avatar";
 
 export interface ExperiencesCardHProps {
   className?: string;
@@ -25,13 +21,9 @@ const ExperiencesCardH: FC<ExperiencesCardHProps> = ({
     address,
     title,
     href,
-    // like,
-    // saleOff,
-    // isAds,
     price,
     reviewStart,
     reviewCount,
-    // author,
     id,
   } = data;
 
@@ -44,8 +36,6 @@ const ExperiencesCardH: FC<ExperiencesCardHProps> = ({
           uniqueID={`ExperiencesCardH_${id}`}
           href={href}
         />
-        {/* <BtnLikeIcon isLiked={like} className="absolute right-3 top-3" /> */}
-        {/* {saleOff && <SaleOffBadge className="absolute left-3 top-3" />} */}
       </div>
     );
   };
@@ -71,7 +61,6 @@ const ExperiencesCardH: FC<ExperiencesCardHProps> = ({
             </div>
           </div>
         </div>
-        {/* <div className="w-14 border-b border-neutral-100 dark:border-neutral-800 my-4"></div> */}
         <div className="hidden sm:block text-sm text-neutral-500 dark:text-neutral-400 mt-4">
           <span className="line-clamp-2">
             Making a cup of coffee in Vietnam is a whole process that you barely
@@ -96,11 +85,6 @@ const ExperiencesCardH: FC<ExperiencesCardHProps> = ({
         <div className="w-14 border-b border-neutral-100 dark:border-neutral-800 my-4"></div>
         <div className="flex justify-between items-end">
           <div className="flex items-center space-x-3 text-sm text-neutral-700  dark:text-neutral-300">
-            {/* <Avatar imgUrl={author.avatar} userName={author.displayName} /> */}
-            {/* <span className="hidden sm:inline-block">
-              <span className="hidden sm:inline">Hosted by</span>{" "}
-              {author.displayName}
-            </span> */}
           </div>
           <span className="text-base font-semibold text-secondary-700">
             {price}

@@ -15,38 +15,9 @@ export interface TaxonomyType {
   desc?: string;
   color?: TwMainColor | string;
   taxonomy: "category" | "tag";
-  listingType?: "stay" | "experiences" | "car";
+  listingType?: "stay" | "experiences";
 }
 
-// export interface AuthorType {
-//   id: string | number;
-//   firstName: string;
-//   lastName: string;
-//   displayName: string;
-//   avatar: string;
-//   bgImage?: string;
-//   email?: string;
-//   count: number;
-//   desc: string;
-//   jobName: string;
-//   href: string;
-//   starRating?: number;
-// }
-
-export interface PostDataType {
-  id: string | number;
-  // author: AuthorType;
-  date: string;
-  href: string;
-  categories: TaxonomyType[];
-  title: string;
-  featuredImage: string;
-  desc?: string;
-  commentCount: number;
-  viewdCount: number;
-  readingTime: number;
-  postType?: "standard" | "video" | "gallery" | "audio";
-}
 
 export type TwMainColor =
   | "pink"
@@ -61,7 +32,6 @@ export type TwMainColor =
 //
 export interface StayDataType {
   id: string | number;
-  // author: AuthorType;
   date: string;
   href: string;
   title: string;
@@ -71,25 +41,32 @@ export interface StayDataType {
   address: string;
   reviewStart: number;
   reviewCount: number;
-  // like: boolean;
   galleryImgs: string[];
   price: string;
   listingCategory: TaxonomyType;
   maxGuests: number;
   bedrooms: number;
   bathrooms: number;
-  // saleOff?: string | null;
-  // isAds: boolean | null;
   map: {
     lat: number;
     lng: number;
   };
 }
 
+export interface Hotel {
+  id : string | number;
+  name: string;
+  phone_number: string;
+  description: string;
+  address: string;
+  city: string;
+  state: string;
+  zip_code: number;
+}
+
 //
 export interface ExperiencesDataType {
   id: string | number;
-  // author: AuthorType;
   date: string;
   href: string;
   title: string;
@@ -99,13 +76,10 @@ export interface ExperiencesDataType {
   address: string;
   reviewStart: number;
   reviewCount: number;
-  // like: boolean;
   galleryImgs: string[];
   price: string;
   listingCategory: TaxonomyType;
   maxGuests: number;
-  // saleOff?: string | null;
-  // isAds: boolean | null;
   map: {
     lat: number;
     lng: number;

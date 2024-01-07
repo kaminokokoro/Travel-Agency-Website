@@ -4,9 +4,6 @@ import { DEMO_STAY_LISTINGS } from "data/listings";
 import { StayDataType } from "data/types";
 import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
-// import BtnLikeIcon from "components/BtnLikeIcon/BtnLikeIcon";
-// import SaleOffBadge from "components/SaleOffBadge/SaleOffBadge";
-// import Badge from "shared/Badge/Badge";
 
 export interface StayCardProps {
   className?: string;
@@ -28,9 +25,6 @@ const StayCard: FC<StayCardProps> = ({
     title,
     bedrooms,
     href,
-    // like,
-    // saleOff,
-    // isAds,
     price,
     reviewStart,
     reviewCount,
@@ -46,8 +40,6 @@ const StayCard: FC<StayCardProps> = ({
           galleryImgs={galleryImgs}
           href={href}
         />
-        {/* <BtnLikeIcon isLiked={like} className="absolute right-3 top-3 z-[1]" /> */}
-        {/* {saleOff && <SaleOffBadge className="absolute left-3 top-3" />} */}
       </div>
     );
   };
@@ -60,7 +52,6 @@ const StayCard: FC<StayCardProps> = ({
             {listingCategory.name} · {bedrooms} beds
           </span>
           <div className="flex items-center space-x-2">
-            {/* {isAds && <Badge name="ADS" color="green" />} */}
             <h2
               className={` font-medium capitalize ${
                 size === "default" ? "text-lg" : "text-base"

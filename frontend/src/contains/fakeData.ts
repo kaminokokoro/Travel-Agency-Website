@@ -30,22 +30,6 @@ const personNames = [
   "Derick Hubbard",
 ];
 
-const tagNames = [
-  "Life",
-  "Travel",
-  "Music",
-  "Beauty",
-  "Beach",
-  "Hotdog",
-  "Car",
-  "Bike",
-  "Wordpress",
-  "Php",
-  "Javascript",
-  "Vue",
-  "Reactjs",
-  "Androind",
-];
 
 const featuredImgs = [
   "https://images.pexels.com/photos/1337753/pexels-photo-1337753.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -108,16 +92,13 @@ function _getImgHightQualityRd() {
   return imgHigtQualitys[Math.floor(Math.random() * imgHigtQualitys.length)];
 }
 
-function _getTagNameRd() {
-  return tagNames[Math.floor(Math.random() * tagNames.length)];
-}
+
 function _getAvatarRd() {
   return avatarImgs[Math.floor(Math.random() * avatarImgs.length)];
 }
 
 export {
   _getImgRd,
-  _getTagNameRd,
   _getAvatarRd,
   _getImgHightQualityRd,
   _getTitleRd,

@@ -82,6 +82,7 @@ export const pages: Page[] = [
   { path: "/about", component: PageAbout },
   { path: "/signup", component: PageSignUp },
   { path: "/login", component: PageLogin },
+  { path: "/page404", component: Page404 },
   //
 ];
 
@@ -101,7 +102,7 @@ const MyRoutes = () => {
           const Component = component;
           return <Route key={path} element={<Component />} path={path} />;
         })}
-        <Route element={<Page404 />} />
+        <Route path="*" element={<Page404 />}/>
       </Routes>
 
       {WIN_WIDTH < 768 && <FooterNav />}

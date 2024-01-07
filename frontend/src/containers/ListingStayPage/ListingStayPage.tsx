@@ -3,7 +3,7 @@ import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import SectionHeroArchivePage from "components/SectionHeroArchivePage/SectionHeroArchivePage";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import SectionGridFilterCard from "./SectionGridFilterCard";
 import { Helmet } from "react-helmet";
 
@@ -11,7 +11,9 @@ export interface ListingStayPageProps {
   className?: string;
 }
 
+
 const ListingStayPage: FC<ListingStayPageProps> = ({ className = "" }) => {
+  
   return (
     <div
       className={`nc-ListingStayPage relative overflow-hidden ${className}`}
