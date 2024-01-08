@@ -78,9 +78,14 @@ class CRUDHotel:
         try:
             with session_scope() as db:
                 hotels = (
-                    db.query(Hotel, func.avg(UserRatingHotel.rating).label('average_rating'))
+                    db.query(
+                        Hotel,
+                        func.avg(UserRatingHotel.rating).label('average_rating'),
+                        func.count(UserRatingHotel.rating).label('rating_count')
+                    )
                     .outerjoin(UserRatingHotel)
-                    .group_by(Hotel.id).order_by(func.avg(UserRatingHotel.rating).desc())
+                    .group_by(Hotel.id)
+                    .order_by(func.avg(UserRatingHotel.rating).desc())
                     .limit(page_size)
                     .offset((page_number - 1) * page_size)
                     .all()

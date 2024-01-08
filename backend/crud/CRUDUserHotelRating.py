@@ -80,10 +80,11 @@ class CRUDUserHotelRating:
             print(error)
             return None
 
-    def get_all_user_hotel_rating_by_hotel_id(self, hotel_id) -> UserRatingHotel:
+    def get_all_user_hotel_rating_by_hotel_id(self, hotel_id,page_num,page_size) -> UserRatingHotel:
         try:
             with session_scope() as db:
-                user_hotel_rating_db = db.query(UserRatingHotel).filter(UserRatingHotel.hotel_id == hotel_id).all()
+                user_hotel_rating_db = db.query(UserRatingHotel).filter(
+                    UserRatingHotel.hotel_id == hotel_id).offset((page_num-1)*page_size).limit(page_size).all()
                 if user_hotel_rating_db is None:
                     return None
                 else:

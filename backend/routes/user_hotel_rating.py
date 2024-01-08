@@ -63,9 +63,9 @@ def get_user_hotel_rating(user_hotel_rating_id) -> JSONResponse:
     return JSONResponse(status_code=200, content={"Hotel Rating": jsonable_encoder(user_hotel_rating_get)})
 
 @router_user_hotel_rating.get("/all/hotel", responses=response_schemas.user_hotel_rating_all_response)
-def get_user_hotel_rating_by_hotel(hotel_id) -> JSONResponse:
+def get_user_hotel_rating_by_hotel(hotel_id,page_num:int =1, page_size:int =10) -> JSONResponse:
     """ Get User Hotel Rating by hotel_id"""
-    user_hotel_rating_get = crud_user_hotel_rating.get_all_user_hotel_rating_by_hotel_id(hotel_id=hotel_id)
+    user_hotel_rating_get = crud_user_hotel_rating.get_all_user_hotel_rating_by_hotel_id(hotel_id=hotel_id,page_num=page_num,page_size=page_size)
     if user_hotel_rating_get is None:
         return JSONResponse(status_code=400,
                             content={"detail": "Bad Request"})
