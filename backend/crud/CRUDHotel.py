@@ -92,9 +92,10 @@ class CRUDHotel:
                 )
                 # Convert to list of dictionaries
                 serialized_hotels = []
-                for hotel, avg_rating in hotels:
+                for hotel, avg_rating, rating_count in hotels:
                     hotel_dict = hotel.__dict__
                     hotel_dict['average_rating'] = avg_rating
+                    hotel_dict['rating_count'] = rating_count
                     serialized_hotels.append(hotel_dict)
 
                 return serialized_hotels
