@@ -55,9 +55,10 @@ const StayDetailPageContainer: FC<{}> = () => {
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         <div className="text-neutral-6000 dark:text-neutral-300">
           <span>
-            Providing lake views, The Symphony 9 Tam Coc in Ninh Binh provides
-            accommodation, an outdoor swimming pool, a bar, a shared lounge, a
-            garden and barbecue facilities. Complimentary WiFi is provided.
+          Nằm tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê vài bước chân, Rosamia Da Nang Hotel cung 
+          cấp chỗ nghỉ với trung tâm thể dục, chỗ đỗ xe riêng miễn phí, sân hiên và nhà hàng. 
+          Khách sạn 5 sao này cung cấp WiFi miễn phí, dịch vụ phòng và dịch vụ lễ tân 24 giờ. 
+          Khách sạn có hồ bơi trong nhà, phòng xông hơi khô, CLB đêm và CLB trẻ em.
           </span>
           <br />
           <br />
@@ -117,35 +118,6 @@ const StayDetailPageContainer: FC<{}> = () => {
     );
   };
 
-  const renderSection7 = () => {
-    return (
-      <div className="listingSection__wrap">
-        {/* HEADING */}
-        <div>
-          <h2 className="text-2xl font-semibold">Location</h2>
-          <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-            San Diego, CA, United States of America (SAN-San Diego Intl.)
-          </span>
-        </div>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
-
-        {/* MAP */}
-        <div className="aspect-w-5 aspect-h-5 sm:aspect-h-3 ring-1 ring-black/10 rounded-xl z-0">
-          <div className="rounded-xl overflow-hidden z-0">
-            <iframe
-              title="x"
-              width="100%"
-              height="100%"
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAGVJfZMAKYfZ71nzL_v5i3LjTTWnCYwTY&q=Eiffel+Tower,Paris+France"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   const renderSection8 = () => {
     return (
@@ -305,7 +277,6 @@ const StayDetailPageContainer: FC<{}> = () => {
           {renderSection1()}
           {renderSection2()}
           {renderSection6()}
-          {renderSection7()}
           {renderSection8()}
         </div>
 

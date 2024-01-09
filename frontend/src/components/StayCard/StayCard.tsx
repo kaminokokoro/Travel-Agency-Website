@@ -20,14 +20,12 @@ const StayCard: FC<StayCardProps> = ({
 }) => {
   const {
     galleryImgs,
-    listingCategory,
     address,
     title,
-    bedrooms,
     href,
     price,
-    reviewStart,
-    reviewCount,
+    average_rating,
+    rating_count,
     id,
   } = data;
 
@@ -38,7 +36,8 @@ const StayCard: FC<StayCardProps> = ({
           uniqueID={`StayCard_${id}`}
           ratioClass="aspect-w-4 aspect-h-3 "
           galleryImgs={galleryImgs}
-          href={href}
+          // href={href}
+          href= '/listing-experiences'
         />
       </div>
     );
@@ -49,7 +48,7 @@ const StayCard: FC<StayCardProps> = ({
       <div className={size === "default" ? "p-4 space-y-4" : "p-3 space-y-2"}>
         <div className="space-y-2">
           <span className="text-sm text-neutral-500 dark:text-neutral-400">
-            {listingCategory.name} · {bedrooms} beds
+            {/* {listingCategory.name} · {bedrooms} beds */}
           </span>
           <div className="flex items-center space-x-2">
             <h2
@@ -89,16 +88,16 @@ const StayCard: FC<StayCardProps> = ({
         <div className="w-14 border-b border-neutral-100 dark:border-neutral-800"></div>
         <div className="flex justify-between items-center">
           <span className="text-base font-semibold">
-            {price}
-            {` `}
             {size === "default" && (
               <span className="text-sm text-neutral-500 dark:text-neutral-400 font-normal">
-                /night
+                Bắt đầu từ
               </span>
             )}
+            {` `}
+            {price}
           </span>
-          {!!reviewStart && (
-            <StartRating reviewCount={reviewCount} point={reviewStart} />
+          {!!average_rating && (
+            <StartRating reviewCount={rating_count} point={average_rating} />
           )}
         </div>
       </div>

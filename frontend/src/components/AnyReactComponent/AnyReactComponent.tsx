@@ -10,8 +10,8 @@ export interface AnyReactComponentProps {
   listing?: StayDataType;
   experiences?: ExperiencesDataType;
   isSelected?: boolean;
-  lat: number;
-  lng: number;
+  // lat: number;
+  // lng: number;
 }
 
 const AnyReactComponent: FC<AnyReactComponentProps> = ({

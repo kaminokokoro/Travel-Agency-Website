@@ -26,8 +26,8 @@ const ExperiencesCard: FC<ExperiencesCardProps> = ({
     title,
     href,
     price,
-    reviewStart,
-    reviewCount,
+    average_rating,
+    rating_count,
     id,
   } = data;
 
@@ -95,7 +95,7 @@ const ExperiencesCard: FC<ExperiencesCardProps> = ({
               </span>
             )}
           </span>
-          <StartRating reviewCount={reviewCount} point={reviewStart} />
+          <StartRating reviewCount={rating_count} point={average_rating} />
         </div>
       </div>
     );

@@ -14,7 +14,6 @@ export interface TaxonomyType {
   thumbnail?: string;
   desc?: string;
   color?: TwMainColor | string;
-  taxonomy: "category" | "tag";
   listingType?: "stay" | "experiences";
 }
 
@@ -35,34 +34,36 @@ export interface StayDataType {
   date: string;
   href: string;
   title: string;
-  featuredImage: string;
-  commentCount: number;
-  viewCount: number;
   address: string;
-  reviewStart: number;
-  reviewCount: number;
+  average_rating: number;
+  rating_count: number;
   galleryImgs: string[];
   price: string;
-  listingCategory: TaxonomyType;
-  maxGuests: number;
-  bedrooms: number;
-  bathrooms: number;
-  map: {
-    lat: number;
-    lng: number;
-  };
 }
 
 export interface Hotel {
-  id : string | number;
   name: string;
   phone_number: string;
-  description: string;
   address: string;
-  city: string;
   state: string;
+  id: string;
+  description: string;
+  city: string;
   zip_code: number;
+  average_rating: number;
+  rating_count: number;
 }
+
+export interface HotelService {
+  id: string;
+  name: string;
+  room_type: string;
+  room_capacity: number;
+  description: string;
+  price: number;
+  hotel_id: string;
+}
+
 
 //
 export interface ExperiencesDataType {
@@ -70,20 +71,16 @@ export interface ExperiencesDataType {
   date: string;
   href: string;
   title: string;
-  featuredImage: string;
-  commentCount: number;
-  viewCount: number;
+  // featuredImage: string;
+  // commentCount: number;
+  // viewCount: number;
   address: string;
-  reviewStart: number;
-  reviewCount: number;
+  average_rating: number;
+  rating_count: number;
   galleryImgs: string[];
   price: string;
-  listingCategory: TaxonomyType;
-  maxGuests: number;
-  map: {
-    lat: number;
-    lng: number;
-  };
+  // listingCategory: TaxonomyType;
+  // maxGuests: number;
 }
 
 //

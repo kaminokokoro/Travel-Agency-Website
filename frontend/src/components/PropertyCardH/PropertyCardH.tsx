@@ -22,8 +22,8 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
     title,
     href,
     price,
-    reviewStart,
-    reviewCount,
+    average_rating,
+    rating_count,
     id,
   } = data;
 
@@ -107,7 +107,7 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
           {renderTienIch()}
           <div className="w-14 border-b border-neutral-100 dark:border-neutral-800 "></div>
           <div className="flex w-full justify-between items-end">
-            <StartRating reviewCount={reviewCount} point={reviewStart} />
+            <StartRating reviewCount={rating_count} point={average_rating} />
             <span className="flex items-center justify-center px-3 py-2 border border-secondary-500 rounded leading-none text-base font-medium text-secondary-500">
               {`${price},000`}
             </span>

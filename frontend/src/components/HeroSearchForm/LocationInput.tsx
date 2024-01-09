@@ -65,7 +65,7 @@ const LocationInput: FC<LocationInputProps> = ({
     return (
       <>
         <h3 className="block mt-2 sm:mt-0 px-4 sm:px-8 font-semibold text-base sm:text-lg text-neutral-800 dark:text-neutral-100">
-          Recent searches
+          Địa điểm nổi tiếng
         </h3>
         <div className="mt-2">
           {[
@@ -80,7 +80,7 @@ const LocationInput: FC<LocationInputProps> = ({
               className="flex px-4 sm:px-8 items-center space-x-3 sm:space-x-4 py-4 hover:bg-neutral-100 dark:hover:bg-neutral-700 cursor-pointer"
             >
               <span className="block text-neutral-400">
-                <ClockIcon className="h-4 sm:h-6 w-4 sm:w-6" />
+                <MapPinIcon className="h-4 sm:h-6 w-4 sm:w-6" />
               </span>
               <span className=" block font-medium text-neutral-700 dark:text-neutral-200">
                 {item}

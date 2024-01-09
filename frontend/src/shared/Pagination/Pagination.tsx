@@ -1,5 +1,5 @@
 import { CustomLink } from "data/types";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import twFocusClass from "utils/twFocusClass";
 
@@ -27,8 +27,14 @@ export interface PaginationProps {
 }
 
 const Pagination: FC<PaginationProps> = ({ className = "" }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageClick = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
   const renderItem = (pag: CustomLink, index: number) => {
-    if (index === 0) {
+    if (index === currentPage - 1) {
       // RETURN ACTIVE PAGINATION
       return (
         <span
@@ -45,6 +51,7 @@ const Pagination: FC<PaginationProps> = ({ className = "" }) => {
         key={index}
         className={`inline-flex w-11 h-11 items-center justify-center rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 text-neutral-6000 dark:text-neutral-400 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:border-neutral-700 ${twFocusClass()}`}
         to={pag.href}
+        onClick={() => handlePageClick(index + 1)}
       >
         {pag.label}
       </Link>

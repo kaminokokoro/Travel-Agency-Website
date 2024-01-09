@@ -12,6 +12,8 @@ export interface SectionGridFilterCardProps {
 }
 
 const DEMO_DATA: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => i < 8);
+// const DEMO_DATA: StayDataType[] = DEMO_STAY_LISTINGS
+// const DEMO_DATA2: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => i <= 8 && i < 8);
 
 const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
   className = "",
