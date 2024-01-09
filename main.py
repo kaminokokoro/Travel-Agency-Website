@@ -1,3 +1,6 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 import uvicorn
 from fastapi import APIRouter, FastAPI
 from fastapi.responses import JSONResponse
@@ -49,6 +52,19 @@ app.include_router(router_flight_ticket, prefix="/flight/ticket", tags=["flight 
 app.include_router(router_user_flight_provider_rating, prefix="/flight/rating", tags=["flight rating"])
 
 
+origins = [
+    "http://localhost:3000",
+    "http://localhost",
+    "http://localhost:8000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Root API
