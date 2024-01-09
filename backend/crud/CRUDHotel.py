@@ -1,7 +1,9 @@
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import and_, func
+from sqlalchemy.orm import joinedload
+
 from backend.db.db import session_scope
-from backend.db.model import Hotel, generate_uuid, UserRatingHotel
+from backend.db.model import Hotel, generate_uuid, UserRatingHotel, HotelServices
 from backend.util import schemas
 
 
@@ -64,11 +66,29 @@ class CRUDHotel:
     def get_hotel(self, hotel_id):
         try:
             with session_scope() as db:
-                hotel_db = db.query(Hotel).filter(Hotel.id == hotel_id).first()
-                if hotel_db is None:
+                hotel_data = (
+                    db.query(
+                        Hotel,
+                        func.avg(UserRatingHotel.rating).label('average_rating'),
+                        func.count(UserRatingHotel.rating).label('rating_count'),
+                        func.min(HotelServices.price).label('min_price')
+                    )
+                    .outerjoin(UserRatingHotel)
+                    .outerjoin(HotelServices)
+                    .filter(Hotel.id == hotel_id)
+                    .group_by(Hotel.id)
+                    .first()
+                )
+
+                if hotel_data is None:
                     return None
                 else:
-                    return hotel_db
+                    hotel, avg_rating, rating_count, min_price = hotel_data
+                    hotel_dict = hotel.__dict__
+                    hotel_dict['average_rating'] = avg_rating
+                    hotel_dict['rating_count'] = rating_count
+                    hotel_dict['min_price'] = min_price
+                    return hotel_dict
         except SQLAlchemyError as e:
             error = str(e.__dict__['orig'])
             print(error)
@@ -81,9 +101,12 @@ class CRUDHotel:
                     db.query(
                         Hotel,
                         func.avg(UserRatingHotel.rating).label('average_rating'),
-                        func.count(UserRatingHotel.rating).label('rating_count')
+                        func.count(UserRatingHotel.rating).label('rating_count'),
+                        func.min(HotelServices.price).label('min_price')  # Fetch minimum price
                     )
                     .outerjoin(UserRatingHotel)
+                    .outerjoin(HotelServices)
+                    .options(joinedload(Hotel.services))
                     .group_by(Hotel.id)
                     .order_by(func.avg(UserRatingHotel.rating).desc())
                     .limit(page_size)
@@ -92,10 +115,11 @@ class CRUDHotel:
                 )
                 # Convert to list of dictionaries
                 serialized_hotels = []
-                for hotel, avg_rating, rating_count in hotels:
+                for hotel, avg_rating, rating_count, min_price in hotels:
                     hotel_dict = hotel.__dict__
                     hotel_dict['average_rating'] = avg_rating
                     hotel_dict['rating_count'] = rating_count
+                    hotel_dict['min_price'] = min_price
                     serialized_hotels.append(hotel_dict)
 
                 return serialized_hotels
@@ -104,18 +128,41 @@ class CRUDHotel:
             print(error)
             return None
 
-    def get_hotel_filter(self, name_hotel, city_hotel, page_number: int, page_size: int) -> Hotel:
+    def get_hotel_filter(self, name_hotel, city_hotel, page_number: int, page_size: int):
         try:
             with session_scope() as db:
-                # hotels = db.query(Hotel).filter(and_(Hotel.name==name_hotel,Hotel.city.like(f"{city_hotel}")))
-                if  city_hotel == "":
-                    hotels = db.query(Hotel).filter(Hotel.name.like(f"%{name_hotel}%")).limit(page_size).offset(
-                        (page_number - 1) * page_size).all()
-                else:
-                    hotels = db.query(Hotel).filter(
-                        and_(Hotel.name.like(f"%{name_hotel}%"), Hotel.city == city_hotel)).limit(page_size).offset(
-                        (page_number - 1) * page_size).all()
-                return hotels
+                query = (
+                    db.query(
+                        Hotel,
+                        func.avg(UserRatingHotel.rating).label('average_rating'),
+                        func.count(UserRatingHotel.rating).label('rating_count'),
+                        func.min(HotelServices.price).label('min_price')
+                    )
+                    .outerjoin(UserRatingHotel)
+                    .outerjoin(HotelServices)
+                    .filter(Hotel.name.like(f"%{name_hotel}%"))
+                )
+
+                if city_hotel:
+                    query = query.filter(Hotel.city == city_hotel)
+
+                hotels = (
+                    query.group_by(Hotel.id)
+                    .order_by(func.avg(UserRatingHotel.rating).desc())
+                    .limit(page_size)
+                    .offset((page_number - 1) * page_size)
+                    .all()
+                )
+
+                serialized_hotels = []
+                for hotel, avg_rating, rating_count, min_price in hotels:
+                    hotel_dict = hotel.__dict__
+                    hotel_dict['average_rating'] = avg_rating
+                    hotel_dict['rating_count'] = rating_count
+                    hotel_dict['min_price'] = min_price
+                    serialized_hotels.append(hotel_dict)
+
+                return serialized_hotels
         except SQLAlchemyError as e:
             error = str(e.__dict__['orig'])
             print(error)
