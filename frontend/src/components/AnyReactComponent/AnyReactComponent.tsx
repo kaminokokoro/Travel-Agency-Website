@@ -36,7 +36,7 @@ const AnyReactComponent: FC<AnyReactComponentProps> = ({
             : ""
         }`}
       >
-        {listing?.price || experiences?.price}
+        {listing?.min_price || experiences?.price}
       </span>
       <Transition
         show={isOpen}

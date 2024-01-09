@@ -3,7 +3,7 @@
     "id": "id1",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -13,13 +13,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id2",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -29,13 +29,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id3",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -45,13 +45,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id4",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -61,13 +61,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id5",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -77,13 +77,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id6",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -93,13 +93,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id7",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -109,13 +109,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id8",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -125,13 +125,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id9",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -141,13 +141,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id10",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -157,13 +157,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id11",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -173,13 +173,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id12",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -189,13 +189,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id13",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -205,13 +205,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id14",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -221,13 +221,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id15",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -237,13 +237,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id16",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -253,13 +253,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id17",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -269,13 +269,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id18",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -285,13 +285,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id19",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -301,13 +301,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id20",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -317,13 +317,13 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   },
   {
     "id": "id21",
     "date": "May 20, 2021",
     "href": "/listing-stay-detail",
-    "title": "Best Western Cedars Hotel ",
+    "name": "Best Western Cedars Hotel ",
     "galleryImgs": [
       "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/1179156/pexels-photo-1179156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -333,6 +333,6 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "price": "$26"
+    "min_price": "$26"
   }
 ]

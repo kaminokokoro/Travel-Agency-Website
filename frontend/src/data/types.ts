@@ -33,12 +33,12 @@ export interface StayDataType {
   id: string | number;
   date: string;
   href: string;
-  title: string;
+  name: string;
   address: string;
   average_rating: number;
   rating_count: number;
   galleryImgs: string[];
-  price: string;
+  min_price: string;
 }
 
 export interface Hotel {
@@ -52,6 +52,7 @@ export interface Hotel {
   zip_code: number;
   average_rating: number;
   rating_count: number;
+  min_price: string;
 }
 
 export interface HotelService {

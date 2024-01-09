@@ -8,7 +8,7 @@ import ExperiencesCard from "components/ExperiencesCard/ExperiencesCard";
 
 export interface SectionGridFilterCardProps {
   className?: string;
-  data?: StayDataType[];
+  data?: ExperiencesDataType[];
 }
 
 const DEMO_DATA: ExperiencesDataType[] = DEMO_EXPERIENCES_LISTINGS.filter(

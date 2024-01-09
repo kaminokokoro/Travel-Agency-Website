@@ -21,9 +21,9 @@ const StayCard: FC<StayCardProps> = ({
   const {
     galleryImgs,
     address,
-    title,
+    name,
     href,
-    price,
+    min_price,
     average_rating,
     rating_count,
     id,
@@ -56,7 +56,7 @@ const StayCard: FC<StayCardProps> = ({
                 size === "default" ? "text-lg" : "text-base"
               }`}
             >
-              <span className="line-clamp-1">{title}</span>
+              <span className="line-clamp-1">{name}</span>
             </h2>
           </div>
           <div className="flex items-center text-neutral-500 dark:text-neutral-400 text-sm space-x-2">
@@ -94,7 +94,7 @@ const StayCard: FC<StayCardProps> = ({
               </span>
             )}
             {` `}
-            {price}
+            {min_price}
           </span>
           {!!average_rating && (
             <StartRating reviewCount={rating_count} point={average_rating} />

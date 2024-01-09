@@ -19,9 +19,9 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
 }) => {
   const {
     galleryImgs,
-    title,
+    name,
     href,
-    price,
+    min_price,
     average_rating,
     rating_count,
     id,
@@ -101,7 +101,7 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
           </div>
           <div className="flex items-center space-x-2">
             <h2 className="text-lg font-medium capitalize">
-              <span className="line-clamp-2">{title}</span>
+              <span className="line-clamp-2">{name}</span>
             </h2>
           </div>
           {renderTienIch()}
@@ -109,7 +109,7 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
           <div className="flex w-full justify-between items-end">
             <StartRating reviewCount={rating_count} point={average_rating} />
             <span className="flex items-center justify-center px-3 py-2 border border-secondary-500 rounded leading-none text-base font-medium text-secondary-500">
-              {`${price},000`}
+              {`${min_price},000`}
             </span>
           </div>
         </div>
