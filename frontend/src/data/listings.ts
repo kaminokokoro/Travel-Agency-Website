@@ -11,7 +11,7 @@ const DEMO_STAY_LISTINGS = __stayListing.map((post, index): StayDataType => {
 
   return {
     ...post,
-    id: `stayListing_${index}_`,
+    // id: `stayListing_${index}_`,
     // listingCategory: category,
   };
 });
@@ -25,7 +25,7 @@ const DEMO_EXPERIENCES_LISTINGS = __experiencesListing.map(
 
     return {
       ...post,
-      id: `experiencesListing_${index}_`,
+      // id: `experiencesListing_${index}_`,
       // listingCategory: category,
     };
   }

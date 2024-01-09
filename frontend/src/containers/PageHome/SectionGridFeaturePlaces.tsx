@@ -11,6 +11,31 @@ const DEMO_DATA: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => i < 8);
 const DEMO_DATA2: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => 8 <= i && i < 16);
 const DEMO_DATA3: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => 16 <= i && i < 24);
 
+
+interface GetDataProps {
+  city: string;
+}
+
+function useFilteredHotel({ city }: GetDataProps) {
+  const [hotels, setHotels] = useState<Hotel[] | undefined>(undefined);
+
+  useEffect(() => {
+    const fetchHotels = async () => {
+      try {
+        const hotelData = await new Server().getFilteredHotel(undefined, city, undefined, 1000000000000);
+        setHotels(hotelData.hotel);
+        // console.log(">>>test filtered", hotelData.hotel)
+      } catch (error) {
+        console.error("Error fetching hotels:", error);
+      }
+    };
+
+    fetchHotels();
+  }, [city]); // Đảm bảo hook được gọi lại khi tham số city thay đổi
+
+  return hotels;
+}
+
 export interface SectionGridFeaturePlacesProps {
   stayListings?: StayDataType[];
   gridClass?: string;
@@ -43,11 +68,11 @@ const SectionGridFeaturePlaces: FC<SectionGridFeaturePlacesProps> = ({
     fetchHotels();
   }, []);
 
-  if (hotels && hotels.length > 0) {
-    console.log(hotels[0].address);
-  } else {
-    console.warn("Hotels data is not available or the array is empty.");
-  }
+  // if (hotels && hotels.length > 0) {
+  //   console.log(hotels[0].address);
+  // } else {
+  //   console.warn("Hotels data is not available or the array is empty.");
+  // }
 
   const [stayListings, setStayListings] = useState<StayDataType[]>(DEMO_DATA);
   const [activeTab, setActiveTab] = useState("TP. Hồ Chí Minh");

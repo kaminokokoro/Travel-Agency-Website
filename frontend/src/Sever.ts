@@ -22,7 +22,7 @@ export class Server {
       }
     }
 
-    async getFilteredHotel(name_hotel: string = '', city_hotel: string = '', page_number: number = 1, page_size: number = 10): Promise<any[]> {
+    async getFilteredHotel(name_hotel: string = '', city_hotel: string = '', page_number: number = 1, page_size: number = 10): Promise<HotelProps> {
       try {
         const queryParams = new URLSearchParams({
           name_hotel: name_hotel,
@@ -44,7 +44,6 @@ export class Server {
       }
     }
     
-  
   
   }
 

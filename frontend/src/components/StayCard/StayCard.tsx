@@ -33,11 +33,11 @@ const StayCard: FC<StayCardProps> = ({
     return (
       <div className="relative w-full">
         <GallerySlider
-          uniqueID={`StayCard_${id}`}
+          uniqueID={`${id}`}
           ratioClass="aspect-w-4 aspect-h-3 "
           galleryImgs={galleryImgs}
           // href={href}
-          href= '/listing-experiences'
+          href= '/listing-stay-detail'
         />
       </div>
     );
