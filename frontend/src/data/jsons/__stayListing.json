@@ -13,7 +13,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id2",
@@ -29,7 +29,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id3",
@@ -45,7 +45,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id4",
@@ -61,7 +61,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id5",
@@ -77,7 +77,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id6",
@@ -93,7 +93,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id7",
@@ -109,7 +109,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id8",
@@ -125,7 +125,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id9",
@@ -141,7 +141,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id10",
@@ -157,7 +157,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id11",
@@ -173,7 +173,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id12",
@@ -189,7 +189,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id13",
@@ -205,7 +205,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id14",
@@ -221,7 +221,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id15",
@@ -237,7 +237,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id16",
@@ -253,7 +253,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id17",
@@ -269,7 +269,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id18",
@@ -285,7 +285,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id19",
@@ -301,7 +301,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id20",
@@ -317,7 +317,7 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   },
   {
     "id": "id21",
@@ -333,6 +333,6 @@
     "address": "1 Anzinger Court",
     "average_rating": 4.8,
     "rating_count": 28,
-    "min_price": "$26"
+    "min_price": 26
   }
 ]

@@ -1,9 +1,9 @@
 import __stayListing from "./jsons/__stayListing.json";
 import __experiencesListing from "./jsons/__experiencesListing.json";
-import { ExperiencesDataType, StayDataType } from "./types";
+import { ExperiencesDataType, StayDataType, Hotel } from "./types";
 
 
-const DEMO_STAY_LISTINGS = __stayListing.map((post, index): StayDataType => {
+const DEMO_STAY_LISTINGS = __stayListing.map((post, index): Hotel => {
   //  ##########  GET CATEGORY BY CAT ID ######## //
   // const category = DEMO_STAY_CATEGORIES.filter(
   //   (taxonomy) => taxonomy.id === post.listingCategoryId

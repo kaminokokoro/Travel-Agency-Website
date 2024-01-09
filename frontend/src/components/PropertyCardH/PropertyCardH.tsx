@@ -4,11 +4,11 @@ import { DEMO_STAY_LISTINGS } from "data/listings";
 import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
 import Badge from "shared/Badge/Badge";
-import { StayDataType } from "data/types";
+import { StayDataType, Hotel } from "data/types";
 
 export interface PropertyCardHProps {
   className?: string;
-  data?: StayDataType;
+  data?: Hotel;
 }
 
 const DEMO_DATA = DEMO_STAY_LISTINGS[0];
@@ -122,7 +122,7 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
       className={`nc-PropertyCardH group relative bg-white dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 rounded-3xl overflow-hidden hover:shadow-xl transition-shadow ${className}`}
       data-nc-id="PropertyCardH"
     >
-      <Link to={href} className="absolute inset-0"></Link>
+      <Link to={`${href}`} className="absolute inset-0"></Link>
       <div className="h-full w-full flex flex-col sm:flex-row sm:items-center">
         {renderSliderGallery()}
         {renderContent()}

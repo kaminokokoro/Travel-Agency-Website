@@ -1,17 +1,17 @@
 import React, { FC } from "react";
 import StayCard from "components/StayCard/StayCard";
 import { DEMO_STAY_LISTINGS } from "data/listings";
-import { StayDataType } from "data/types";
+import { StayDataType, Hotel } from "data/types";
 import Pagination from "shared/Pagination/Pagination";
 import TabFilters from "./TabFilters";
 import Heading2 from "components/Heading/Heading2";
 
 export interface SectionGridFilterCardProps {
   className?: string;
-  data?: StayDataType[];
+  data?: Hotel[];
 }
 
-const DEMO_DATA: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => i < 8);
+const DEMO_DATA: Hotel[] = DEMO_STAY_LISTINGS.filter((_, i) => i < 8);
 // const DEMO_DATA: StayDataType[] = DEMO_STAY_LISTINGS
 // const DEMO_DATA2: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => i <= 8 && i < 8);
 

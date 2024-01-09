@@ -43,16 +43,18 @@ export interface StayDataType {
 
 export interface Hotel {
   name: string;
-  phone_number: string;
+  phone_number?: string;
   address: string;
-  state: string;
+  state?: string;
   id: string;
-  description: string;
-  city: string;
-  zip_code: number;
+  description?: string;
+  city?: string;
+  zip_code?: number;
   average_rating: number;
   rating_count: number;
-  min_price: string;
+  min_price: number;
+  galleryImgs: string[];
+  href?: string;
 }
 
 export interface HotelService {

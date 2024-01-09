@@ -1,13 +1,13 @@
 import React, { FC } from "react";
 import GallerySlider from "components/GallerySlider/GallerySlider";
 import { DEMO_STAY_LISTINGS } from "data/listings";
-import { StayDataType } from "data/types";
+import { StayDataType, Hotel } from "data/types";
 import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
 
 export interface StayCardProps {
   className?: string;
-  data?: StayDataType;
+  data?: Hotel;
   size?: "default" | "small";
 }
 
@@ -94,7 +94,7 @@ const StayCard: FC<StayCardProps> = ({
               </span>
             )}
             {` `}
-            {min_price}
+            {min_price}{` VNĐ`}
           </span>
           {!!average_rating && (
             <StartRating reviewCount={rating_count} point={average_rating} />
@@ -110,7 +110,7 @@ const StayCard: FC<StayCardProps> = ({
       data-nc-id="StayCard"
     >
       {renderSliderGallery()}
-      <Link to={href}>{renderContent()}</Link>
+      <Link to={`${href}`}>{renderContent()}</Link>
     </div>
   );
 };
