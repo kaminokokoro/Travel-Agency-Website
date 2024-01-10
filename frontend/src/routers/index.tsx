@@ -6,6 +6,14 @@ import Footer from "shared/Footer/Footer";
 import PageHome from "containers/PageHome/PageHome";
 import Page404 from "containers/Page404/Page404";
 import ListingStayPage from "containers/ListingStayPage/ListingStayPage";
+import HotelSaiGon from "containers/ListingStayPage/HotelSaiGon"; 
+import HotelDanang from "containers/ListingStayPage/HotelDanang"; 
+import HotelDalat from "containers/ListingStayPage/HotelDalat"; 
+import HotelNhaTrang from "containers/ListingStayPage/HotelNhaTrang"; 
+import HotelPhuquoc from "containers/ListingStayPage/HotelPhuquoc"; 
+import HotelVungtau from "containers/ListingStayPage/HotelVungtau"; 
+import HotelHalong from "containers/ListingStayPage/HotelHalong"; 
+import HotelCantho from "containers/ListingStayPage/HotelCantho"; 
 // import ListingStayMapPage from "containers/ListingStayPage/ListingStayMapPage";
 import ListingExperiencesPage from "containers/ListingExperiencesPage/ListingExperiencesPage";
 // import ListingExperiencesMapPage from "containers/ListingExperiencesPage/ListingExperiencesMapPage";
@@ -39,8 +47,19 @@ export const pages: Page[] = [
   { path: "/#", exact: true, component: PageHome },
   { path: "/home-1-header-2", exact: true, component: PageHome },
   //
-  { path: "/listing-stay", component: ListingStayPage },
+  { path: "/listing-stay-hanoi", component: ListingStayPage },
+  { path: "/listing-stay-tphcm", component: HotelSaiGon },
+  { path: "/listing-stay-nhatrang", component: HotelNhaTrang },
+  { path: "/listing-stay-cantho", component: HotelCantho },
+  { path: "/listing-stay-dalat", component: HotelDalat },
+  { path: "/listing-stay-vungtau", component: HotelVungtau },
+  { path: "/listing-stay-halong", component: HotelHalong },
+  { path: "/listing-stay-phuquoc", component: HotelPhuquoc },
+  { path: "/listing-stay-danang", component: HotelDanang },
   // { path: "/listing-stay-map", component: ListingStayMapPage },
+
+
+
   { path: "/listing-stay-detail", component: ListingStayDetailPage },
   //
   {

@@ -9,7 +9,7 @@ export interface CustomLink {
 export interface TaxonomyType {
   id: string | number;
   name: string;
-  href: string;
+  href?: string;
   count?: number;
   thumbnail?: string;
   desc?: string;

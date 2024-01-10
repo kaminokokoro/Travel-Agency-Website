@@ -56,6 +56,16 @@ export interface LocationStates {
   "/forgot-pass"?: {};
   "/page404"?: {};
   "/subscription"?: {};
+
+  "/listing-stay-hanoi"?: {};
+  "/listing-stay-tphcm"?: {};
+  "/listing-stay-nhatrang"?: {};
+  "/listing-stay-danang"?: {};
+  "/listing-stay-dalat"?: {};
+  "/listing-stay-halong"?: {};
+  "/listing-stay-cantho"?: {};
+  "/listing-stay-phuquoc"?: {};
+  "/listing-stay-vungtau"?: {};
 }
 
 export type PathName = keyof LocationStates;

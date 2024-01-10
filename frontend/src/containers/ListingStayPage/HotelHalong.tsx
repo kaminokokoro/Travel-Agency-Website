@@ -1,63 +1,19 @@
-import SectionHero from "components/SectionHero/SectionHero";
-import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
-import React, { useEffect, useState } from "react";
-import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
-// import SectionOurFeatures from "components/SectionOurFeatures/SectionOurFeatures";
-import SectionGridFeaturePlaces from "./SectionGridFeaturePlaces";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
-import { TaxonomyType } from "data/types";
+import SectionHeroArchivePage from "components/SectionHeroArchivePage/SectionHeroArchivePage";
+import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
+import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
+import React, { FC, useEffect, useState } from "react";
+import SectionGridFilterCard from "./SectionGridFilterCard";
+import { Helmet } from "react-helmet";
 import { Server, HotelProps } from "../../Sever";
 import { StayDataType, Hotel } from "data/types";
+import { TaxonomyType } from "data/types";
 
 
-
-const DEMO_CATS_2: TaxonomyType[] = [
-  {
-    id: "1",
-    href: "/listing-stay",
-    name: "Enjoy the great cold",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/5764100/pexels-photo-5764100.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  },
-  {
-    id: "222",
-    href: "/listing-stay",
-    name: "Sleep in a floating way",
-    // taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/2869499/pexels-photo-2869499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "3",
-    href: "/listing-stay",
-    name: "In the billionaire's house",
-    // taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "4",
-    href: "/listing-stay",
-    name: "Cool in the deep forest",
-    // taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/247532/pexels-photo-247532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "5",
-    href: "/listing-stay",
-    name: "In the billionaire's house",
-    // taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-];
+export interface ListingStayPageProps {
+  className?: string;
+}
 
 interface GetDataProps {
   city: string;
@@ -84,7 +40,8 @@ function useFilteredHotel({ city }: GetDataProps) {
 }
 
 
-function PageHome() {
+const ListingStayPage: FC<ListingStayPageProps> = ({ className = "" }) => {
+  
   const hotels_hanoi = useFilteredHotel({ city: 'hà nội' });
   const hotels_danang = useFilteredHotel({ city: 'đà nẵng'});
   const hotels_tphcm = useFilteredHotel({ city: 'thành phố hồ chí minh'});
@@ -153,14 +110,7 @@ function PageHome() {
       thumbnail:
         "https://i.pinimg.com/564x/94/08/2e/94082e6b8c08131855df8ca5c1e76460.jpg",
     },
-    {
-      id: "9",
-      href: "/listing-stay-halong",
-      name: "Hạ Long",
-      count: hotels_halong?.length,
-      thumbnail:
-        "https://i.pinimg.com/564x/1f/9d/f2/1f9df2901739a49cd2aaec8206aefb15.jpg",
-    },
+
     {
       id: "10",
       href: "/listing-stay-cantho",
@@ -172,49 +122,46 @@ function PageHome() {
   ];
 
   return (
-    
-    <div className="nc-PageHome relative overflow-hidden">
-      {/* GLASSMOPHIN */}
+    <div
+      className={`nc-ListingStayPage relative overflow-hidden ${className}`}
+      data-nc-id="ListingStayPage"
+    >
+      <Helmet>
+        <title>LU</title>
+      </Helmet>
       <BgGlassmorphism />
 
-      <div className="container relative space-y-24 mb-24 lg:space-y-28 lg:mb-28">
+      <div className="container relative overflow-hidden">
         {/* SECTION HERO */}
-        <SectionHero className="pt-10 lg:pt-16 lg:pb-16" />
-
-        {/* SECTION 1 */}
-        <SectionSliderNewCategories
-          heading = "Thành phố phổ biến tại Việt Nam"
-          subHeading = ""
-          categories={DEMO_CATS}
-          uniqueClassName="PageHome_s1"
+        <SectionHeroArchivePage
+          currentPage="Stays"
+          currentTab="Stays"
+          className="pt-10 pb-24 lg:pb-28 lg:pt-16 "
+          name="Hạ Long"
         />
 
         {/* SECTION */}
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionGridFeaturePlaces />
-        </div>
-
+        <SectionGridFilterCard className="pb-24 lg:pb-28" name="Hạ Long"/>
 
         {/* SECTION 1 */}
         <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
+          <BackgroundSection />
           <SectionSliderNewCategories
-            categories={DEMO_CATS_2}
-            categoryCardType="card4"
-            itemPerRow={4}
-            heading="Tour nổi bật"
-            subHeading="Popular places to stay that Chisfis recommends for you"
+            heading="Khám phá các thành phố phổ biến của Việt Nam"
+            subHeading=""
+            categoryCardType="card5"
+            itemPerRow={5}
             sliderStyle="style2"
-            uniqueClassName="PageHome_s2"
+            uniqueClassName="ListingStayMapPage"
+            categories = {DEMO_CATS}
           />
         </div>
 
-        <SectionSubscribe2 />
-
+        {/* SECTION */}
+        <SectionSubscribe2 className="py-24 lg:py-28" />
       </div>
     </div>
   );
-}
+};
 
-export default PageHome;
+export default ListingStayPage;

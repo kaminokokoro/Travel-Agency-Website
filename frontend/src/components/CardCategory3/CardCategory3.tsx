@@ -13,7 +13,7 @@ const CardCategory3: FC<CardCategory3Props> = ({
   className = "",
   taxonomy,
 }) => {
-  const { count, name, href = "/", thumbnail } = taxonomy;
+  const { count, name, href = "/listing-stay", thumbnail } = taxonomy;
   return (
     <Link
       to={href}

@@ -5,8 +5,8 @@ import ncNanoId from "utils/ncNanoId";
 export const NAVIGATION_DEMO: NavItemType[] = [
   {
     id: ncNanoId(),
-    href: "/listing-stay",
-    name: "Hotels",
+    href: "/listing-stay-hanoi",
+    name: "Khách sạn",
   },
   {
     id: ncNanoId(),
@@ -16,6 +16,6 @@ export const NAVIGATION_DEMO: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/listing-flights",
-    name: "Flights",
+    name: "Chuyến bay",
   },
 ];
