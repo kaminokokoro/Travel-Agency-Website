@@ -148,8 +148,8 @@ class TourDate(Base):
     tour_id = Column(String(36), ForeignKey('tour.id'))
     tour = relationship("Tour", back_populates="tour_date")
     # max_people = Column(Integer)
-    departure_datetime = Column(DateTime)
-    return_datetime = Column(DateTime)
+    departure_datetime = Column(Date)
+    return_datetime = Column(Date)
     tour_booking = relationship("TourBooking", back_populates="tour_date",cascade="all, delete-orphan")
 
 # class TourItinerary(Base):

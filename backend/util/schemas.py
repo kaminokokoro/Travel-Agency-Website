@@ -274,8 +274,8 @@ class TourBookingDelete(BaseModel):
 
 class TourDateCreate(BaseModel):
     tour_id: str
-    departure_datetime: datetime
-    return_datetime: datetime
+    departure_datetime: date
+    return_datetime: date
 
 
 class TourDateUpdate(TourDateCreate):

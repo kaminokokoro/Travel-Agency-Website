@@ -1,5 +1,5 @@
 from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy import and_, func
+from sqlalchemy import and_, func, distinct
 from sqlalchemy.orm import joinedload
 
 from backend.db.db import session_scope
@@ -70,7 +70,7 @@ class CRUDHotel:
                     db.query(
                         Hotel,
                         func.avg(UserRatingHotel.rating).label('average_rating'),
-                        func.count(UserRatingHotel.rating).label('rating_count'),
+                        func.count(distinct(UserRatingHotel.id)).label('rating_count'),
                         func.min(HotelServices.price).label('min_price')
                     )
                     .outerjoin(UserRatingHotel)
@@ -101,7 +101,7 @@ class CRUDHotel:
                     db.query(
                         Hotel,
                         func.avg(UserRatingHotel.rating).label('average_rating'),
-                        func.count(UserRatingHotel.rating).label('rating_count'),
+                        func.count(distinct(UserRatingHotel.id)).label('rating_count'),
                         func.min(HotelServices.price).label('min_price')  # Fetch minimum price
                     )
                     .outerjoin(UserRatingHotel)
@@ -128,6 +128,8 @@ class CRUDHotel:
             print(error)
             return None
 
+
+
     def get_hotel_filter(self, name_hotel, city_hotel, page_number: int, page_size: int):
         try:
             with session_scope() as db:
@@ -135,7 +137,7 @@ class CRUDHotel:
                     db.query(
                         Hotel,
                         func.avg(UserRatingHotel.rating).label('average_rating'),
-                        func.count(UserRatingHotel.rating).label('rating_count'),
+                        func.count(distinct(UserRatingHotel.id)).label('rating_count'),
                         func.min(HotelServices.price).label('min_price')
                     )
                     .outerjoin(UserRatingHotel)
