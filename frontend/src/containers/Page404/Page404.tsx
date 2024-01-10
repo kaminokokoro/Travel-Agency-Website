@@ -14,10 +14,10 @@ const Page404: React.FC = () => (
       <header className="text-center max-w-2xl mx-auto space-y-2">
         <NcImage src={I404Png} />
         <span className="block text-sm text-neutral-800 sm:text-base dark:text-neutral-200 tracking-wider font-medium">
-          THE PAGE YOU WERE LOOKING FOR DOESN'T EXIST.{" "}
+          Trang bạn đang tìm kiếm không tồn tại.{" "}
         </span>
         <div className="pt-8">
-          <ButtonPrimary href="/">Return Home Page</ButtonPrimary>
+          <ButtonPrimary href="/">Trở lại trang chủ</ButtonPrimary>
         </div>
       </header>
     </div>

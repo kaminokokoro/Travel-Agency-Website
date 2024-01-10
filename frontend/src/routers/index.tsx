@@ -60,6 +60,7 @@ export const pages: Page[] = [
 
 
 
+  { path: "/hotels/:id", component: ListingStayDetailPage },
   { path: "/listing-stay-detail", component: ListingStayDetailPage },
   //
   {

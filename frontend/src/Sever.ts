@@ -1,7 +1,15 @@
-import {Hotel} from 'data/types'
+import {Hotel, HotelRatingByHotelId} from 'data/types'
 
 export interface HotelProps {
   hotel: Hotel[]
+}
+
+export interface HotelSingle {
+  hotel: Hotel
+}
+
+export interface HotelRatingProps {
+  "Hotel Rating": HotelRatingByHotelId[]
 }
 
 export class Server {
@@ -43,6 +51,35 @@ export class Server {
         throw error;
       }
     }
+
+    async getHotel(id: string): Promise<HotelSingle> {
+      try {
+        const response = await fetch(`${this.baseUrl}/hotel/?hotel_id=${id}`);
+        if (!response.ok) {
+          throw new Error(`Request failed with status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error("Error fetching places:", error);
+        throw error;
+      }
+    }
+
+    async getHotelRatingByHotelId(id: string, page_number: number = 1, page_size: number = 99999999): Promise<HotelRatingProps> {
+      try {
+        const response = await fetch(`${this.baseUrl}/hotel-rating/all/hotel?hotel_id=${id}&page_num=${page_number}&page_size=${page_size}`);
+        if (!response.ok) {
+          throw new Error(`Request failed with status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error("Error fetching places:", error);
+        throw error;
+      }
+    }
+    
     
   
   }

@@ -37,7 +37,7 @@ const StayCard: FC<StayCardProps> = ({
           ratioClass="aspect-w-4 aspect-h-3 "
           galleryImgs={galleryImgs}
           // href={href}
-          href= '/listing-stay-detail'
+          href= {`/hotels/${id}`}
         />
       </div>
     );

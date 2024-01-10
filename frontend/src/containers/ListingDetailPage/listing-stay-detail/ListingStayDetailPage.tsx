@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import CommentListing from "components/CommentListing/CommentListing";
 import FiveStartIconForRate from "components/FiveStartIconForRate/FiveStartIconForRate";
 import StartRating from "components/StartRating/StartRating";
@@ -12,10 +12,45 @@ import Input from "shared/Input/Input";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
 import DetailPagetLayout from "../Layout";
 import GuestsInput from "./GuestsInput";
+import { Hotel, HotelRatingByHotelId } from "data/types";
+import { Server, HotelProps } from "../../../Sever";
+
+
+
 
 const StayDetailPageContainer: FC<{}> = () => {
   //
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [data, setData] = React.useState<Hotel | undefined>(undefined);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await new Server().getHotel(id);
+        setData(result.hotel);
+      } catch (error) {
+        console.error("Error fetching hotel:", error);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+
+  const [hotelRating, setHotelRating] = React.useState<HotelRatingByHotelId[] | undefined>(undefined);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await new Server().getHotelRatingByHotelId(id);
+        setHotelRating(result["Hotel Rating"]);
+      } catch (error) {
+        console.error("Error fetching hotel:", error);
+      }
+    };
+
+    fetchData();
+  }, [id]);
 
   const thisPathname = useLocation().pathname;
   const router = useNavigate();
@@ -27,22 +62,28 @@ const StayDetailPageContainer: FC<{}> = () => {
   const renderSection1 = () => {
     return (
       <div className="listingSection__wrap !space-y-6">
-        {/* 2 */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-          Beach House in Collingwood
-        </h2>
+        {data ? (
+          <>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+              {data.name}
+            </h2>
+            <div className="flex items-center space-x-4">
+              <StartRating
+                point={data.average_rating}
+                reviewCount={data.rating_count}
+              />
+              <span>·</span>
+              <span>
+                <i className="las la-map-marker-alt"></i>
+                <span className="ml-1">{data.address}</span>
+              </span>
+            </div>
+          </>
+        ) : (
+          // Placeholder hoặc xử lý khi data không tồn tại
+          <p>Data is unavailable</p>
+        )}
 
-        {/* 3 */}
-        <div className="flex items-center space-x-4">
-          <StartRating />
-          <span>·</span>
-          <span>
-            <i className="las la-map-marker-alt"></i>
-            <span className="ml-1"> Tokyo, Jappan</span>
-          </span>
-        </div>
-
-        {/* 5 */}
         <div className="w-full border-neutral-100 dark:border-neutral-700" />
       </div>
     );
@@ -51,28 +92,16 @@ const StayDetailPageContainer: FC<{}> = () => {
   const renderSection2 = () => {
     return (
       <div className="listingSection__wrap">
-        <h2 className="text-2xl font-semibold">Stay information</h2>
+        <h2 className="text-2xl font-semibold">Thông tin khách sạn</h2>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-        <div className="text-neutral-6000 dark:text-neutral-300">
-          <span>
-            Nằm tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê vài bước chân, Rosamia Da Nang Hotel cung
-            cấp chỗ nghỉ với trung tâm thể dục, chỗ đỗ xe riêng miễn phí, sân hiên và nhà hàng.
-            Khách sạn 5 sao này cung cấp WiFi miễn phí, dịch vụ phòng và dịch vụ lễ tân 24 giờ.
-            Khách sạn có hồ bơi trong nhà, phòng xông hơi khô, CLB đêm và CLB trẻ em.
-          </span>
-          <br />
-          <br />
-          <span>
-            There is a private bathroom with bidet in all units, along with a
-            hairdryer and free toiletries.
-          </span>
-          <br /> <br />
-          <span>
-            The Symphony 9 Tam Coc offers a terrace. Both a bicycle rental
-            service and a car rental service are available at the accommodation,
-            while cycling can be enjoyed nearby.
-          </span>
-        </div>
+        {data ? (
+          <div className="text-neutral-6000 dark:text-neutral-300">
+            {data.description}
+          </div>
+        ) : (
+          // Placeholder hoặc xử lý khi data không tồn tại
+          <p>Data is unavailable</p>
+        )}
       </div>
     );
   };
@@ -81,39 +110,44 @@ const StayDetailPageContainer: FC<{}> = () => {
   const renderSection6 = () => {
     return (
       <div className="listingSection__wrap">
-        {/* HEADING */}
-        <h2 className="text-2xl font-semibold">Reviews (23 reviews)</h2>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
+        {hotelRating ? (
+          /* HEADING */
+          <>
+            <h2 className="text-2xl font-semibold">Đánh giá ({hotelRating.length || 0} đánh giá)</h2>
+            <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
 
-        {/* Content */}
-        <div className="space-y-5">
-          <FiveStartIconForRate iconClass="w-6 h-6" className="space-x-0.5" />
-          <div className="relative">
-            <Input
-              fontClass=""
-              sizeClass="h-16 px-4 py-3"
-              rounded="rounded-3xl"
-              placeholder="Share your thoughts ..."
-            />
-            <ButtonCircle
-              className="absolute right-2 top-1/2 transform -translate-y-1/2"
-              size=" w-12 h-12 "
-            >
-              <ArrowRightIcon className="w-5 h-5" />
-            </ButtonCircle>
-          </div>
-        </div>
+            {/* Content */}
+            <div className="space-y-5">
+              <FiveStartIconForRate iconClass="w-6 h-6" className="space-x-0.5" />
+              <div className="relative">
+                <Input
+                  fontClass=""
+                  sizeClass="h-16 px-4 py-3"
+                  rounded="rounded-3xl"
+                  placeholder="Share your thoughts ..."
+                />
+                <ButtonCircle
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2"
+                  size=" w-12 h-12 "
+                >
+                  <ArrowRightIcon className="w-5 h-5" />
+                </ButtonCircle>
+              </div>
+            </div>
 
-        {/* comment */}
-        <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
-          <CommentListing className="py-8" />
-          <CommentListing className="py-8" />
-          <CommentListing className="py-8" />
-          <CommentListing className="py-8" />
-          <div className="pt-8">
-            <ButtonSecondary>View more 20 reviews</ButtonSecondary>
-          </div>
-        </div>
+            {/* comment */}
+            <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
+              <CommentListing className="py-8" />
+              <CommentListing className="py-8" />
+              <CommentListing className="py-8" />
+              <CommentListing className="py-8" />
+              {/* <div className="pt-8">
+                <ButtonSecondary>View more 20 reviews</ButtonSecondary>
+              </div> */}
+            </div>
+          </>
+        ) : null}
+
       </div>
     );
   };
@@ -160,8 +194,8 @@ const StayDetailPageContainer: FC<{}> = () => {
           <div className="prose sm:prose">
             <ul className="mt-3 text-neutral-500 dark:text-neutral-400 space-y-2">
               <li>
-              Tôi và bạn sẽ cùng nhau giữ gìn cảnh quan, môi trường xanh, sạch bằng cách 
-              không xả rác, không sử dụng chất kích thích và tôn trọng mọi người xung quanh.
+                Tôi và bạn sẽ cùng nhau giữ gìn cảnh quan, môi trường xanh, sạch bằng cách
+                không xả rác, không sử dụng chất kích thích và tôn trọng mọi người xung quanh.
               </li>
               <li>Không hát karaoke quá 11h30.</li>
             </ul>

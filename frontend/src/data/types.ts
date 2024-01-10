@@ -67,6 +67,14 @@ export interface HotelService {
   hotel_id: string;
 }
 
+export interface HotelRatingByHotelId {
+  id: string;
+  rating: number;
+  user_id: string;
+  hotel_id: string;
+  comments: string;
+}
+
 
 //
 export interface ExperiencesDataType {
