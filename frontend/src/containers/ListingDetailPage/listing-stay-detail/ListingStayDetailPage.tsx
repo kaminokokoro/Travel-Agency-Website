@@ -55,10 +55,10 @@ const StayDetailPageContainer: FC<{}> = () => {
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         <div className="text-neutral-6000 dark:text-neutral-300">
           <span>
-          Nằm tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê vài bước chân, Rosamia Da Nang Hotel cung 
-          cấp chỗ nghỉ với trung tâm thể dục, chỗ đỗ xe riêng miễn phí, sân hiên và nhà hàng. 
-          Khách sạn 5 sao này cung cấp WiFi miễn phí, dịch vụ phòng và dịch vụ lễ tân 24 giờ. 
-          Khách sạn có hồ bơi trong nhà, phòng xông hơi khô, CLB đêm và CLB trẻ em.
+            Nằm tại thành phố Đà Nẵng, cách Bãi biển Mỹ Khê vài bước chân, Rosamia Da Nang Hotel cung
+            cấp chỗ nghỉ với trung tâm thể dục, chỗ đỗ xe riêng miễn phí, sân hiên và nhà hàng.
+            Khách sạn 5 sao này cung cấp WiFi miễn phí, dịch vụ phòng và dịch vụ lễ tân 24 giờ.
+            Khách sạn có hồ bơi trong nhà, phòng xông hơi khô, CLB đêm và CLB trẻ em.
           </span>
           <br />
           <br />
@@ -123,32 +123,31 @@ const StayDetailPageContainer: FC<{}> = () => {
     return (
       <div className="listingSection__wrap">
         {/* HEADING */}
-        <h2 className="text-2xl font-semibold">Things to know</h2>
+        <h2 className="text-2xl font-semibold">Một số lưu ý</h2>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
 
         {/* CONTENT */}
         <div>
-          <h4 className="text-lg font-semibold">Cancellation policy</h4>
+          <h4 className="text-lg font-semibold">Chính sách hủy thuê phòng</h4>
           <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-            Refund 50% of the booking value when customers cancel the room
-            within 48 hours after successful booking and 14 days before the
-            check-in time. <br />
-            Then, cancel the room 14 days before the check-in time, get a 50%
-            refund of the total amount paid (minus the service fee).
+            Hoàn tiền 50% giá trị đặt phòng khi khách hàng hủy phòng trong vòng 48 giờ
+            sau khi đặt phòng thành công và 14 ngày trước thời gian nhận phòng. <br />
+            Sau đó, hủy phòng trước 14 ngày so với giờ nhận phòng, được hoàn 50% tổng
+            số tiền đã thanh toán (trừ phí dịch vụ).
           </span>
         </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
 
         {/* CONTENT */}
         <div>
-          <h4 className="text-lg font-semibold">Check-in time</h4>
+          <h4 className="text-lg font-semibold">Giờ nhận phòng</h4>
           <div className="mt-3 text-neutral-500 dark:text-neutral-400 max-w-md text-sm sm:text-base">
             <div className="flex space-x-10 justify-between p-3 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
-              <span>Check-in</span>
+              <span>Nhận phòng</span>
               <span>08:00 am - 12:00 am</span>
             </div>
             <div className="flex space-x-10 justify-between p-3">
-              <span>Check-out</span>
+              <span>Trả phòng</span>
               <span>02:00 pm - 04:00 pm</span>
             </div>
           </div>
@@ -157,15 +156,14 @@ const StayDetailPageContainer: FC<{}> = () => {
 
         {/* CONTENT */}
         <div>
-          <h4 className="text-lg font-semibold">Special Note</h4>
+          <h4 className="text-lg font-semibold">Đặc biệt lưu ý</h4>
           <div className="prose sm:prose">
             <ul className="mt-3 text-neutral-500 dark:text-neutral-400 space-y-2">
               <li>
-                Ban and I will work together to keep the landscape and
-                environment green and clean by not littering, not using
-                stimulants and respecting people around.
+              Tôi và bạn sẽ cùng nhau giữ gìn cảnh quan, môi trường xanh, sạch bằng cách 
+              không xả rác, không sử dụng chất kích thích và tôn trọng mọi người xung quanh.
               </li>
-              <li>Do not sing karaoke past 11:30</li>
+              <li>Không hát karaoke quá 11h30.</li>
             </ul>
           </div>
         </div>
@@ -237,9 +235,8 @@ const StayDetailPageContainer: FC<{}> = () => {
           {PHOTOS.filter((_, i) => i >= 1 && i < 5).map((item, index) => (
             <div
               key={index}
-              className={`relative rounded-md sm:rounded-xl overflow-hidden ${
-                index >= 3 ? "hidden sm:block" : ""
-              }`}
+              className={`relative rounded-md sm:rounded-xl overflow-hidden ${index >= 3 ? "hidden sm:block" : ""
+                }`}
             >
               <div className="aspect-w-4 aspect-h-3 sm:aspect-w-6 sm:aspect-h-5">
                 <img
