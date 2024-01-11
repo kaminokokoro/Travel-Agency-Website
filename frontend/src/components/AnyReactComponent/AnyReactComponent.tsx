@@ -1,7 +1,7 @@
 import { Transition } from "@headlessui/react";
 import ExperiencesCard from "components/ExperiencesCard/ExperiencesCard";
 import StayCard from "components/StayCard/StayCard";
-import { ExperiencesDataType,  Hotel } from "data/types";
+import { ExperiencesDataType, StayDataType, Hotel } from "data/types";
 import React, { FC, Fragment } from "react";
 import { useState } from "react";
 

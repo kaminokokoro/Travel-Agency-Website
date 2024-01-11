@@ -7,7 +7,7 @@ import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import { Server, HotelProps } from "../../Sever";
-import {  Hotel } from "data/types";
+import { StayDataType, Hotel } from "data/types";
 import { TaxonomyType } from "data/types";
 
 interface GetDataProps {

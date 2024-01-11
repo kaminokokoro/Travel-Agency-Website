@@ -1,5 +1,5 @@
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
-import SectionHeroArchivePage3 from "components/SectionHeroArchivePage/SectionHeroArchivePage3";
+import SectionHeroArchivePage from "components/SectionHeroArchivePage/SectionHeroArchivePage";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import { TaxonomyType } from "data/types";
@@ -79,10 +79,9 @@ const ListingFlightsPage: FC<ListingFlightsPageProps> = ({
 
       <div className="container relative">
         {/* SECTION HERO */}
-        <SectionHeroArchivePage3
+        <SectionHeroArchivePage
           currentPage="Flights"
           currentTab="Flights"
-          name="Chuyến bay"
           listingType={
             <>
               <i className="text-2xl las la-plane-departure"></i>

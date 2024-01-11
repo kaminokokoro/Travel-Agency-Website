@@ -1,33 +1,15 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 
 export interface FlightCardProps {
   className?: string;
   defaultOpen?: boolean;
   data: {
     id: string;
-    name?: string;
-    description?: string;
-    departure_from?: string;
-    arrival_to?: string;
-    departure_date?: string;
-    arrival_date?: string;
     airlines: {
       logo: string;
       name: string;
-      id?: string;
-      phone_number?: string;
-      description?: string;
     };
-    ticket: {
-      id: string;
-      name: string;
-      description: string;
-      seat_class: string;
-      adult_price: number;
-      child_price: number;
-      baby_price: number;
-      flight_id: string;
-    }
+    price: string;
   };
 }
 
@@ -37,10 +19,6 @@ const FlightCard: FC<FlightCardProps> = ({
   defaultOpen = false,
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-
-  useEffect(() => {
-    setIsOpen(defaultOpen);
-  }, [defaultOpen]);
 
   const renderDetailTop = () => {
     return (
@@ -115,8 +93,9 @@ const FlightCard: FC<FlightCardProps> = ({
         <a href="##" className="absolute inset-0" />
 
         <span
-          className={`absolute right-0 bottom-0 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 w-10 h-10 bg-neutral-50 dark:bg-neutral-800 rounded-full flex items-center justify-center cursor-pointer ${isOpen ? "transform -rotate-180" : ""
-            }`}
+          className={`absolute right-0 bottom-0 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 w-10 h-10 bg-neutral-50 dark:bg-neutral-800 rounded-full flex items-center justify-center cursor-pointer ${
+            isOpen ? "transform -rotate-180" : ""
+          }`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <i className="text-xl las la-angle-down"></i>
@@ -181,11 +160,11 @@ const FlightCard: FC<FlightCardProps> = ({
             </div>
           </div>
 
-          {/* adult_price */}
+          {/* PRICE */}
           <div className="flex-[4] whitespace-nowrap sm:text-right">
             <div>
               <span className="text-xl font-semibold text-secondary-6000">
-                {data.ticket.adult_price}
+                {data.price}
               </span>
             </div>
             <div className="text-xs sm:text-sm text-neutral-500 font-normal mt-0.5">

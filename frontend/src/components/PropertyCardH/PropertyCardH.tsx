@@ -4,7 +4,7 @@ import { DEMO_STAY_LISTINGS } from "data/listings";
 import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
 import Badge from "shared/Badge/Badge";
-import {  Hotel } from "data/types";
+import { StayDataType, Hotel } from "data/types";
 
 export interface PropertyCardHProps {
   className?: string;
