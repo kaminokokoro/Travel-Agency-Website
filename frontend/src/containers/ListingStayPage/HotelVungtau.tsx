@@ -7,7 +7,7 @@ import React, { FC, useEffect, useState } from "react";
 import SectionGridFilterCard from "./SectionGridFilterCard";
 import { Helmet } from "react-helmet";
 import { Server, HotelProps } from "../../Sever";
-import { StayDataType, Hotel } from "data/types";
+import { Hotel } from "data/types";
 import { TaxonomyType } from "data/types";
 
 

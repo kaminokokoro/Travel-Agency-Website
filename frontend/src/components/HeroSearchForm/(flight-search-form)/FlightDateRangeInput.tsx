@@ -55,7 +55,7 @@ const FlightDateRangeInput: FC<FlightDateRangeInputProps> = ({
               : ""}
           </span>
           <span className="block mt-1 text-sm text-neutral-400 leading-none font-light">
-            {selectsRange ? "Pick up - Drop off" : "Pick up date"}
+            {selectsRange ? "Ngày đi - Ngày về" : "Ngày đi"}
           </span>
         </div>
       </>

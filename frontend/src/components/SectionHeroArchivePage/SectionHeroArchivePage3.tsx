@@ -8,7 +8,7 @@ import cantho from "images/cantho.png";
 import vungtau from "images/vungtau.png";
 import halong from "images/halong.png";
 import phuquoc from "images/phuquoc.png";
-import chuyenbay from "images/chuyenbay.png";
+import maybay from "images/maybay.png";
 import HeroSearchForm, {
   SearchTab,
 } from "components/HeroSearchForm/HeroSearchForm";
@@ -57,7 +57,7 @@ const SectionHeroArchivePage: FC<SectionHeroArchivePageProps> = ({
   name
 }) => {
 
-  const [rightImage, setRightImage] = useState<string>(hanoi);
+  const [rightImage, setRightImage] = useState<string>(maybay);
   const data = useFilteredHotel({ city: `${name}` });
 
   useEffect(() => {
@@ -93,7 +93,7 @@ const SectionHeroArchivePage: FC<SectionHeroArchivePageProps> = ({
           break;
         // Thêm các case khác nếu có nhiều thành phố khác
         default:
-          setRightImage(hanoi); // Giá trị mặc định khi không khớp city nào
+          setRightImage(maybay); // Giá trị mặc định khi không khớp city nào
       }
     }
   }, [data]);

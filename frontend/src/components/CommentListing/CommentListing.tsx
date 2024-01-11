@@ -3,31 +3,32 @@ import React, { FC } from "react";
 import Avatar from "shared/Avatar/Avatar";
 
 interface CommentListingDataType {
-  name: string;
+  first_name: string;
+  last_name: string;
   avatar?: string;
-  date: string;
+  // date: string;
   comment: string;
-  starPoint: number;
+  rating: number;
 }
 
 export interface CommentListingProps {
   className?: string;
   data?: CommentListingDataType;
-  hasListingTitle?: boolean;
+  // hasListingTitle?: boolean;
 }
 
 const DEMO_DATA: CommentListingDataType = {
-  name: "jasmine",
-  date: "Dec 26, 2023",
+  first_name: "jasmine",
+  last_name: "josh",
   comment:
     "like it",
-  starPoint: 5,
+  rating: 5,
 };
 
 const CommentListing: FC<CommentListingProps> = ({
   className = "",
   data = DEMO_DATA,
-  hasListingTitle,
+  // hasListingTitle,
 }) => {
   return (
     <div
@@ -38,7 +39,7 @@ const CommentListing: FC<CommentListingProps> = ({
         <Avatar
           sizeClass="h-10 w-10 text-lg"
           radius="rounded-full"
-          userName={data.name}
+          userName={data.first_name}
           imgUrl={data.avatar}
         />
       </div>
@@ -46,19 +47,8 @@ const CommentListing: FC<CommentListingProps> = ({
         <div className="flex justify-between space-x-3">
           <div className="flex flex-col">
             <div className="text-sm font-semibold">
-              <span>{data.name}</span>
-              {hasListingTitle && (
-                <>
-                  <span className="text-neutral-500 dark:text-neutral-400 font-normal">
-                    {` review in `}
-                  </span>
-                  <a href="/">The Lounge & Bar</a>
-                </>
-              )}
+              <span>{data.first_name + " " + data.last_name}</span>
             </div>
-            <span className="text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">
-              {data.date}
-            </span>
           </div>
           <div className="flex text-yellow-500">
             <StarIcon className="w-4 h-4" />

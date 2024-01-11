@@ -1,4 +1,4 @@
-import {Hotel, HotelRatingByHotelId} from 'data/types'
+import {Hotel, HotelRatingByHotelId, UserProfile, FlightProvider, Flight, FlightTicket} from 'data/types'
 
 export interface HotelProps {
   hotel: Hotel[]
@@ -10,6 +10,10 @@ export interface HotelSingle {
 
 export interface HotelRatingProps {
   "Hotel Rating": HotelRatingByHotelId[]
+}
+
+export interface UserProfileProps {
+  user_profile: UserProfile
 }
 
 export class Server {
@@ -80,7 +84,47 @@ export class Server {
       }
     }
     
-    
+    async getAllFlightProvider(): Promise<FlightProvider[]> {
+      try {
+        const response = await fetch(`${this.baseUrl}/flight/provider/all`);
+        if (!response.ok) {
+          throw new Error(`Request failed with status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error("Error fetching places:", error);
+        throw error;
+      }
+    }
+
+    async getAllFlight(page_num: number = 1, page_size: number = 9999999999): Promise<Flight[]> {
+      try {
+        const response = await fetch(`${this.baseUrl}/flight/all?page_num=${page_num}&page_size=${page_size}`);
+        if (!response.ok) {
+          throw new Error(`Request failed with status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error("Error fetching places:", error);
+        throw error;
+      }
+    }
+
+    async getFlightTicketByFlId(flight_id: string): Promise<FlightTicket[]> {
+      try {
+        const response = await fetch(`${this.baseUrl}/flight/ticket/all?flight_id=${flight_id}`);
+        if (!response.ok) {
+          throw new Error(`Request failed with status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error("Error fetching places:", error);
+        throw error;
+      }
+    }
   
   }
 

@@ -8,7 +8,6 @@ import cantho from "images/cantho.png";
 import vungtau from "images/vungtau.png";
 import halong from "images/halong.png";
 import phuquoc from "images/phuquoc.png";
-import chuyenbay from "images/chuyenbay.png";
 import HeroSearchForm, {
   SearchTab,
 } from "components/HeroSearchForm/HeroSearchForm";

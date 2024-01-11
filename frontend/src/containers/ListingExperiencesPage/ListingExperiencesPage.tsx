@@ -1,6 +1,6 @@
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
-import SectionHeroArchivePage from "components/SectionHeroArchivePage/SectionHeroArchivePage";
+import SectionHeroArchivePage2 from "components/SectionHeroArchivePage/SectionHeroArchivePage";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import { TaxonomyType } from "data/types";
@@ -80,13 +80,14 @@ const ListingExperiencesPage: FC<ListingExperiencesPageProps> = ({
 
       <div className="container relative">
         {/* SECTION HERO */}
-        <SectionHeroArchivePage
+        <SectionHeroArchivePage2
           currentPage="Experiences"
           currentTab="Experiences"
+          name="Hà Nội"
           listingType={
             <>
               <i className="text-2xl las la-umbrella-beach"></i>
-              <span className="ml-2.5">1599 experiences</span>
+              <span className="ml-2.5">1599 trải nghiệm</span>
             </>
           }
           className="pt-10 pb-24 lg:pb-28 lg:pt-16 "

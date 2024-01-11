@@ -8,7 +8,7 @@ import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import { TaxonomyType } from "data/types";
 import { Server, HotelProps } from "../../Sever";
-import { StayDataType, Hotel } from "data/types";
+import { Hotel } from "data/types";
 
 
 

@@ -29,17 +29,7 @@ export type TwMainColor =
   | "gray";
 
 //
-export interface StayDataType {
-  id: string | number;
-  date: string;
-  href: string;
-  name: string;
-  address: string;
-  average_rating: number;
-  rating_count: number;
-  galleryImgs: string[];
-  min_price: string;
-}
+
 
 export interface Hotel {
   name: string;
@@ -75,6 +65,20 @@ export interface HotelRatingByHotelId {
   comments: string;
 }
 
+export interface UserProfile {
+  last_name: string;
+  first_name: string;
+  email: string;
+  city: string;
+  zip_code: string;
+  user_id: string;
+  gender: boolean;
+  id: string;
+  street: string;
+  state: string;
+  date_of_birth: string;
+}
+
 
 //
 export interface ExperiencesDataType {
@@ -82,16 +86,41 @@ export interface ExperiencesDataType {
   date: string;
   href: string;
   title: string;
-  // featuredImage: string;
-  // commentCount: number;
-  // viewCount: number;
   address: string;
   average_rating: number;
   rating_count: number;
   galleryImgs: string[];
   price: string;
-  // listingCategory: TaxonomyType;
-  // maxGuests: number;
+}
+
+export interface FlightProvider {
+  id: string;
+  name: string;
+  description: string;
+  email: string;
+  phone_number: string;
+}
+
+export interface Flight {
+  id: string;
+  name: string;
+  description: string;
+  departure_from: string;
+  arrival_to: string;
+  departure_date: string;
+  arrival_date: string;
+  flight_provider_id: string;
+}
+
+export interface FlightTicket {
+  id: string;
+  name: string;
+  description: string;
+  seat_class: string;
+  adult_price: number;
+  child_price: number;
+  baby_price: number;
+  flight_id: string;
 }
 
 //

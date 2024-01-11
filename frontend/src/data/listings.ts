@@ -1,6 +1,6 @@
 import __stayListing from "./jsons/__stayListing.json";
 import __experiencesListing from "./jsons/__experiencesListing.json";
-import { ExperiencesDataType, StayDataType, Hotel } from "./types";
+import { ExperiencesDataType, Hotel } from "./types";
 
 
 const DEMO_STAY_LISTINGS = __stayListing.map((post, index): Hotel => {

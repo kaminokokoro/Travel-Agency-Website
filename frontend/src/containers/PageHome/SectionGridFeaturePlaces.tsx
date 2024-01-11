@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useEffect, useState } from "react";
 // import { DEMO_STAY_LISTINGS } from "data/listings";
-import { StayDataType, Hotel } from "data/types";
+import {  Hotel } from "data/types";
 // import ButtonPrimary from "shared/Button/ButtonPrimary";
 import HeaderFilter from "./HeaderFilter";
 import StayCard from "components/StayCard/StayCard";
@@ -46,7 +46,7 @@ function useFilteredHotel({ city }: GetDataProps) {
 }
 
 export interface SectionGridFeaturePlacesProps {
-  stayListings?: StayDataType[];
+  stayListings?: Hotel[];
   gridClass?: string;
   heading?: ReactNode;
   subHeading?: ReactNode;
