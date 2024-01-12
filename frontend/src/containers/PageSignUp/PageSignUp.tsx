@@ -47,27 +47,27 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
   return (
     <div className={`nc-PageSignUp ${className}`} data-nc-id="PageSignUp">
       <Helmet>
-        <title>Explore</title>
+        <title>LU</title>
       </Helmet>
       <div className="container mb-24 lg:mb-32">
         <h2 className="my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
-          Đăng ký
+          Signup
         </h2>
         <div className="max-w-md mx-auto space-y-6 ">
           <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
             <label className="block">
               <span className="text-neutral-800 dark:text-neutral-200">
-                Địa chỉ Email
+                Email address
               </span>
               <Input
                 type="email"
-                placeholder=""
+                placeholder="example@example.com"
                 className="mt-1"
               />
             </label>
             <label className="block">
               <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
-                Mật khẩu
+                Password
               </span>
               <Input
                 type="password"
@@ -78,7 +78,7 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
             </label>
             <label className="block">
               <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
-                Xác nhận mật khẩu
+                Confirm password
               </span>
               <Input
                 type="password"
@@ -91,11 +91,11 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
                 <p className="text-red-500 text-sm">{passwordError}</p>
               )}
             </label>
-            <ButtonPrimary type="submit">Tiếp tục</ButtonPrimary>
+            <ButtonPrimary type="submit">Continue</ButtonPrimary>
           </form>
 
           <span className="block text-center text-neutral-700 dark:text-neutral-300">
-            Đã có tài khoản? <Link to="/login">Đăng nhập</Link>
+            Already have an account? <Link to="/login">Sign in</Link>
           </span>
         </div>
       </div>

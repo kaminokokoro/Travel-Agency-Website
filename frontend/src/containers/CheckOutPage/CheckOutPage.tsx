@@ -33,34 +33,34 @@ const CheckOutPagePageMain: FC<CheckOutPagePageMainProps> = ({
           <div className="py-5 sm:px-5 space-y-3">
             <div>
               <span className="text-sm text-neutral-500 dark:text-neutral-400 line-clamp-1">
-              Phòng Gia Đình
+                Hotel room in Tokyo, Jappan
               </span>
               <span className="text-base font-medium mt-1 block">
-                HUS Hotel
+                The Lounge & Bar
               </span>
             </div>
-            {/* <span className="block  text-sm text-neutral-500 dark:text-neutral-400">
+            <span className="block  text-sm text-neutral-500 dark:text-neutral-400">
               2 beds · 2 baths
-            </span> */}
+            </span>
             <div className="w-10 border-b border-neutral-200  dark:border-neutral-700"></div>
             <StartRating />
           </div>
         </div>
         <div className="flex flex-col space-y-4">
-          <h3 className="text-2xl font-semibold">Giá chi tiết</h3>
+          <h3 className="text-2xl font-semibold">Price detail</h3>
           <div className="flex justify-between text-neutral-6000 dark:text-neutral-300">
-            <span>400000 VNĐ x 3 ngày</span>
-            <span>1200000 VNĐ</span>
+            <span>$19 x 3 day</span>
+            <span>$57</span>
           </div>
-          {/* <div className="flex justify-between text-neutral-6000 dark:text-neutral-300">
+          <div className="flex justify-between text-neutral-6000 dark:text-neutral-300">
             <span>Service charge</span>
             <span>$0</span>
-          </div> */}
+          </div>
 
           <div className="border-b border-neutral-200 dark:border-neutral-700"></div>
           <div className="flex justify-between font-semibold">
-            <span>Tổng</span>
-            <span>1200000 VNĐ</span>
+            <span>Total</span>
+            <span>$57</span>
           </div>
         </div>
       </div>
@@ -71,12 +71,12 @@ const CheckOutPagePageMain: FC<CheckOutPagePageMainProps> = ({
     return (
       <div className="w-full flex flex-col sm:rounded-2xl sm:border border-neutral-200 dark:border-neutral-700 space-y-8 px-0 sm:p-6 xl:p-8">
         <h2 className="text-3xl lg:text-4xl font-semibold">
-          Xác nhận và thanh toán
+          Confirm and payment
         </h2>
         <div className="border-b border-neutral-200 dark:border-neutral-700"></div>
 
         <div>
-          <h3 className="text-2xl font-semibold">Thanh toán bằng</h3>
+          <h3 className="text-2xl font-semibold">Pay with</h3>
           <div className="w-14 border-b border-neutral-200 dark:border-neutral-700 my-5"></div>
 
           <div className="mt-6">
@@ -119,16 +119,16 @@ const CheckOutPagePageMain: FC<CheckOutPagePageMainProps> = ({
               <Tab.Panels>
                 <Tab.Panel className="space-y-5">
                   <div className="space-y-1">
-                    <Label>Số thẻ </Label>
-                    <Input defaultValue="" />
+                    <Label>Card number </Label>
+                    <Input defaultValue="111 112 222 999" />
                   </div>
                   <div className="space-y-1">
-                    <Label>Chủ thẻ </Label>
-                    <Input defaultValue="" />
+                    <Label>Card holder </Label>
+                    <Input defaultValue="JOHN DOE" />
                   </div>
                   <div className="flex space-x-5  ">
                     <div className="flex-1 space-y-1">
-                      <Label>Ngày hết hạn </Label>
+                      <Label>Expiration date </Label>
                       <Input type="date" defaultValue="MM/YY" />
                     </div>
                     <div className="flex-1 space-y-1">
@@ -140,17 +140,17 @@ const CheckOutPagePageMain: FC<CheckOutPagePageMainProps> = ({
                 <Tab.Panel className="space-y-5">
                   <div className="space-y-1">
                     <Label>Email </Label>
-                    <Input type="email" defaultValue="" />
+                    <Input type="email" defaultValue="example@gmail.com" />
                   </div>
                   <div className="space-y-1">
-                    <Label>Mật khẩu </Label>
-                    <Input type="password" defaultValue="" />
+                    <Label>Password </Label>
+                    <Input type="password" defaultValue="***" />
                   </div>
                 </Tab.Panel>
               </Tab.Panels>
             </Tab.Group>
             <div className="pt-8">
-              <ButtonPrimary href={"/pay-done"}>Xác nhận và thanh toán</ButtonPrimary>
+              <ButtonPrimary href={"/pay-done"}>Confirm and pay</ButtonPrimary>
             </div>
           </div>
         </div>

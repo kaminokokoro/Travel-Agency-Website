@@ -11,11 +11,15 @@ export interface FlightSearchFormProps {}
 
 const flightClass = [
   {
-    name: "Phổ thông",
+    name: "Economy",
     href: "##",
   },
   {
-    name: "Thương gia",
+    name: "Business",
+    href: "##",
+  },
+  {
+    name: "Multiple",
     href: "##",
   },
 ];
@@ -24,8 +28,8 @@ export type TypeDropOffLocationType = "roundTrip" | "oneWay" | "";
 
 const FlightSearchForm: FC<FlightSearchFormProps> = () => {
   const [dropOffLocationType, setDropOffLocationType] =
-    useState<TypeDropOffLocationType>("oneWay");
-  const [flightClassState, setFlightClassState] = useState("Phổ thông");
+    useState<TypeDropOffLocationType>("roundTrip");
+  const [flightClassState, setFlightClassState] = useState("Economy");
 
   const [guestAdultsInputValue, setGuestAdultsInputValue] = useState(2);
   const [guestChildrenInputValue, setGuestChildrenInputValue] = useState(1);
@@ -66,7 +70,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = () => {
             px-4 py-1.5 rounded-md inline-flex items-center font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 text-xs`}
               onClickCapture={() => document.querySelector("html")?.click()}
             >
-              <span>{`${totalGuests || ""} hành khách`}</span>
+              <span>{`${totalGuests || ""} Guests`}</span>
               <ChevronDownIcon
                 className={`${
                   open ? "" : "text-opacity-70"
@@ -90,16 +94,16 @@ const FlightSearchForm: FC<FlightSearchFormProps> = () => {
                   onChange={(value) => handleChangeData(value, "guestAdults")}
                   max={10}
                   min={1}
-                  label="Người lớn"
-                  desc="Từ 13 tuổi trở lên"
+                  label="Adults"
+                  desc="Ages 13 or above"
                 />
                 <NcInputNumber
                   className="w-full mt-6"
                   defaultValue={guestChildrenInputValue}
                   onChange={(value) => handleChangeData(value, "guestChildren")}
                   max={4}
-                  label="Trẻ con"
-                  desc="Từ 2-12 tuổi"
+                  label="Children"
+                  desc="Ages 2–12"
                 />
 
                 <NcInputNumber
@@ -107,8 +111,8 @@ const FlightSearchForm: FC<FlightSearchFormProps> = () => {
                   defaultValue={guestInfantsInputValue}
                   onChange={(value) => handleChangeData(value, "guestInfants")}
                   max={4}
-                  label="Sơ sinh"
-                  desc="Từ 0-2 tuổi"
+                  label="Infants"
+                  desc="Ages 0–2"
                 />
               </Popover.Panel>
             </Transition>
@@ -173,56 +177,56 @@ const FlightSearchForm: FC<FlightSearchFormProps> = () => {
     );
   };
 
-  // const renderRadioBtn = () => {
-  //   return (
-  //     <div className=" py-5 [ nc-hero-field-padding ] flex flex-row flex-wrap border-b border-neutral-100 dark:border-neutral-700">
-  //       <div
-  //         className={`py-1.5 px-4 flex items-center rounded-full font-medium text-xs cursor-pointer mr-2 my-1 sm:mr-3 ${
-  //           dropOffLocationType === "roundTrip"
-  //             ? "bg-black shadow-black/10 shadow-lg text-white"
-  //             : "border border-neutral-300 dark:border-neutral-700"
-  //         }`}
-  //         onClick={(e) => setDropOffLocationType("oneWay")}
-  //       >
-  //         Khứ hồi
-  //       </div>
-  //       <div
-  //         className={`py-1.5 px-4 flex items-center rounded-full font-medium text-xs cursor-pointer mr-2 my-1 sm:mr-3 ${
-  //           dropOffLocationType === "oneWay"
-  //             ? "bg-black text-white shadow-black/10 shadow-lg"
-  //             : "border border-neutral-300 dark:border-neutral-700"
-  //         }`}
-  //         onClick={(e) => setDropOffLocationType("oneWay")}
-  //       >
-  //         Một chiều
-  //       </div>
+  const renderRadioBtn = () => {
+    return (
+      <div className=" py-5 [ nc-hero-field-padding ] flex flex-row flex-wrap border-b border-neutral-100 dark:border-neutral-700">
+        <div
+          className={`py-1.5 px-4 flex items-center rounded-full font-medium text-xs cursor-pointer mr-2 my-1 sm:mr-3 ${
+            dropOffLocationType === "roundTrip"
+              ? "bg-black shadow-black/10 shadow-lg text-white"
+              : "border border-neutral-300 dark:border-neutral-700"
+          }`}
+          onClick={(e) => setDropOffLocationType("roundTrip")}
+        >
+          Round-trip
+        </div>
+        <div
+          className={`py-1.5 px-4 flex items-center rounded-full font-medium text-xs cursor-pointer mr-2 my-1 sm:mr-3 ${
+            dropOffLocationType === "oneWay"
+              ? "bg-black text-white shadow-black/10 shadow-lg"
+              : "border border-neutral-300 dark:border-neutral-700"
+          }`}
+          onClick={(e) => setDropOffLocationType("oneWay")}
+        >
+          One-way
+        </div>
 
-  //       <div className="self-center border-r border-slate-200 dark:border-slate-700 h-8 mr-2 my-1 sm:mr-3"></div>
+        <div className="self-center border-r border-slate-200 dark:border-slate-700 h-8 mr-2 my-1 sm:mr-3"></div>
 
-  //       <div className="mr-2 my-1 sm:mr-3 border border-neutral-300 dark:border-neutral-700 rounded-full">
-  //         {renderSelectClass()}
-  //       </div>
-  //       <div className="my-1 border border-neutral-300 dark:border-neutral-700 rounded-full">
-  //         {renderGuest()}
-  //       </div>
-  //     </div>
-  //   );
-  // };
+        <div className="mr-2 my-1 sm:mr-3 border border-neutral-300 dark:border-neutral-700 rounded-full">
+          {renderSelectClass()}
+        </div>
+        <div className="my-1 border border-neutral-300 dark:border-neutral-700 rounded-full">
+          {renderGuest()}
+        </div>
+      </div>
+    );
+  };
 
   const renderForm = () => {
     return (
-      <form className="w-full relative mt-8 flex flex-col md:flex-row  rounded-3xl md:rounded-full shadow-xl dark:shadow-2xl bg-white dark:bg-neutral-800">
-        {/* {renderRadioBtn()} */}
+      <form className="w-full relative mt-8 rounded-[40px] xl:rounded-[49px] rounded-t-2xl xl:rounded-t-3xl shadow-xl dark:shadow-2xl bg-white dark:bg-neutral-800">
+        {renderRadioBtn()}
         <div className="flex flex-1 rounded-full">
           <LocationInput
-            placeHolder="Bay từ"
-            desc="Bạn muốn khởi hành ở đâu?"
+            placeHolder="Flying from"
+            desc="Where do you want to fly from?"
             className="flex-1"
           />
           <div className="self-center border-r border-slate-200 dark:border-slate-700 h-8"></div>
           <LocationInput
-            placeHolder="Đến"
-            desc="Bạn muốn bay đến đâu?"
+            placeHolder="Flying to"
+            desc="Where you want to fly to?"
             className="flex-1"
             divHideVerticalLineClass=" -inset-x-0.5"
           />

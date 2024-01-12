@@ -42,20 +42,20 @@ const FlightDateRangeInput: FC<FlightDateRangeInputProps> = ({
         </div>
         <div className="flex-grow text-left">
           <span className="block xl:text-lg font-semibold">
-            {startDate?.toLocaleDateString("vi-VN", {
+            {startDate?.toLocaleDateString("en-US", {
               month: "short",
               day: "2-digit",
-            }) || "Thêm ngày"}
+            }) || "Add dates"}
             {selectsRange && endDate
               ? " - " +
-                endDate?.toLocaleDateString("vi-VN", {
+                endDate?.toLocaleDateString("en-US", {
                   month: "short",
                   day: "2-digit",
                 })
               : ""}
           </span>
           <span className="block mt-1 text-sm text-neutral-400 leading-none font-light">
-            {selectsRange ? "Ngày đi - Ngày về" : "Ngày đi"}
+            {selectsRange ? "Pick up - Drop off" : "Pick up date"}
           </span>
         </div>
       </>

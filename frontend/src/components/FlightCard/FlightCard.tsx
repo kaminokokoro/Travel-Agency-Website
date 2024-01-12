@@ -5,21 +5,11 @@ export interface FlightCardProps {
   defaultOpen?: boolean;
   data: {
     id: string;
-    departure_date: string;
-    arrival_date: string;
-    departure_from: string;
-    arrival_to: string;
-    ten_may_bay: string;
     airlines: {
       logo: string;
       name: string;
     };
-    ticket: {
-      adult_price: number;
-      child_price: number;
-      baby_price: number;
-      ten_ve: string;
-    }
+    price: string;
   };
 }
 
@@ -28,23 +18,12 @@ const FlightCard: FC<FlightCardProps> = ({
   data,
   defaultOpen = false,
 }) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);    
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const renderDetailTop = () => {
-    // Convert departure and arrival times to Date objects
-    const departureTime = new Date(`1970-01-01T${data.departure_date.split(" ")[1]}`);
-    const arrivalTime = new Date(`1970-01-01T${data.arrival_date.split(" ")[1]}`);
-  
-    // Calculate the time difference in milliseconds
-    const timeDifferenceInMilliseconds: number = arrivalTime.getTime() - departureTime.getTime();
-  
-    // Convert the time difference to hours and minutes
-    const hours: number = Math.floor(timeDifferenceInMilliseconds / (1000 * 60 * 60));
-    const minutes: number = Math.floor((timeDifferenceInMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
-    
     return (
       <div>
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row ">
           <div className="w-24 md:w-20 lg:w-24 flex-shrink-0 md:pt-7">
             <img src={data.airlines.logo} className="w-10" alt="" />
           </div>
@@ -56,53 +35,50 @@ const FlightCard: FC<FlightCardProps> = ({
             </div>
             <div className="ml-4 space-y-10 text-sm">
               <div className="flex flex-col space-y-1">
-                <span className="text-neutral-500 dark:text-neutral-400">
-                  {data.departure_date.split(" ")[0]} · {data.departure_date.split(" ")[1]}
+                <span className=" text-neutral-500 dark:text-neutral-400">
+                  Monday, August 12 · 10:00
                 </span>
-                <span className="font-semibold">
-                  {data.departure_from}
+                <span className=" font-semibold">
+                  Tokyo International Airport (HND)
                 </span>
               </div>
               <div className="flex flex-col space-y-1">
-                <span className="text-neutral-500 dark:text-neutral-400">
-                  {data.arrival_date.split(" ")[0]} · {data.arrival_date.split(" ")[1]}
+                <span className=" text-neutral-500 dark:text-neutral-400">
+                  Monday, August 16 · 10:00
                 </span>
-                <span className="font-semibold">
-                  {data.arrival_to}
+                <span className=" font-semibold">
+                  Singapore International Airport (SIN)
                 </span>
               </div>
             </div>
           </div>
           <div className="border-l border-neutral-200 dark:border-neutral-700 md:mx-6 lg:mx-10"></div>
           <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-1 md:space-y-2">
-            <li>{`Thời gian bay: ${hours} giờ ${minutes} phút`}</li>
-            <li>{data.ten_may_bay} · {data.airlines.name}</li>
+            <li>Trip time: 7 hours 45 minutes</li>
+            <li>ANA · Business class · Boeing 787 · NH 847</li>
           </ul>
         </div>
       </div>
     );
   };
-  
 
   const renderDetail = () => {
     if (!isOpen) return null;
     return (
       <div className="p-4 md:p-8 border border-neutral-200 dark:border-neutral-700 rounded-2xl ">
         {renderDetailTop()}
+        <div className="my-7 md:my-10 space-y-5 md:pl-24">
+          <div className="border-t border-neutral-200 dark:border-neutral-700" />
+          <div className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
+            Transit time: 15 hours 45 minutes - Bangkok (BKK)
+          </div>
+          <div className="border-t border-neutral-200 dark:border-neutral-700" />
+        </div>
+        {renderDetailTop()}
       </div>
     );
   };
-  const matchResult1 = data.departure_from.match(/\(([^)]+)\)/);
-  const matchResult2 = data.arrival_to.match(/\(([^)]+)\)/);
-  const departureTime = new Date(`1970-01-01T${data.departure_date.split(" ")[1]}`);
-    const arrivalTime = new Date(`1970-01-01T${data.arrival_date.split(" ")[1]}`);
-  
-    // Calculate the time difference in milliseconds
-    const timeDifferenceInMilliseconds: number = arrivalTime.getTime() - departureTime.getTime();
-  
-    // Convert the time difference to hours and minutes
-    const hours: number = Math.floor(timeDifferenceInMilliseconds / (1000 * 60 * 60));
-    const minutes: number = Math.floor((timeDifferenceInMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
+
   return (
     <div
       className={`nc-FlightCardgroup p-4 sm:p-6 relative bg-white dark:bg-neutral-900 border border-neutral-100
@@ -131,9 +107,38 @@ const FlightCard: FC<FlightCardProps> = ({
             <img src={data.airlines.logo} className="w-10" alt="" />
           </div>
 
+          {/* FOR MOBILE RESPONSIVE */}
+          <div className="block lg:hidden space-y-1">
+            <div className="flex font-semibold">
+              <div>
+                <span>11:00</span>
+                <span className="flex items-center text-sm text-neutral-500 font-normal mt-0.5">
+                  HND
+                </span>
+              </div>
+              <span className="w-12 flex justify-center">
+                <i className=" text-2xl las la-long-arrow-alt-right"></i>
+              </span>
+              <div>
+                <span>20:00</span>
+                <span className="flex items-center text-sm text-neutral-500 font-normal mt-0.5">
+                  SIN
+                </span>
+              </div>
+            </div>
+
+            <div className="text-sm text-neutral-500 font-normal mt-0.5">
+              <span className="VG3hNb">Nonstop</span>
+              <span className="mx-2">·</span>
+              <span>7h 45m</span>
+              <span className="mx-2">·</span>
+              <span>HAN</span>
+            </div>
+          </div>
+
           {/* TIME - NAME */}
           <div className="hidden lg:block  min-w-[150px] flex-[4] ">
-            <div className="font-medium text-lg">{data.departure_date.split(" ")[1]} - {data.arrival_date.split(" ")[1]}</div>
+            <div className="font-medium text-lg">11:00 - 20:00</div>
             <div className="text-sm text-neutral-500 font-normal mt-0.5">
               {data.airlines.name}
             </div>
@@ -141,22 +146,30 @@ const FlightCard: FC<FlightCardProps> = ({
 
           {/* TIMME */}
           <div className="hidden lg:block flex-[4] whitespace-nowrap">
-            <div className="font-medium text-lg"> {matchResult1 ? matchResult1[1] : ''} - {matchResult2 ? matchResult2[1] : ''}</div>
+            <div className="font-medium text-lg"> HND - SIN</div>
             <div className="text-sm text-neutral-500 font-normal mt-0.5">
-            {`${hours} giờ ${minutes} phút`}
+              7 hours 15 minutes
             </div>
           </div>
 
           {/* TYPE */}
           <div className="hidden lg:block flex-[4] whitespace-nowrap">
-            <div className="font-medium text-lg">Ngày bay</div>
+            <div className="font-medium text-lg">1 stop</div>
             <div className="text-sm text-neutral-500 font-normal mt-0.5">
-              {data.departure_date.split(' ')[0]}
+              2 hours 15 minutes BKK
             </div>
           </div>
 
           {/* PRICE */}
           <div className="flex-[4] whitespace-nowrap sm:text-right">
+            <div>
+              <span className="text-xl font-semibold text-secondary-6000">
+                {data.price}
+              </span>
+            </div>
+            <div className="text-xs sm:text-sm text-neutral-500 font-normal mt-0.5">
+              round-trip
+            </div>
           </div>
         </div>
       </div>

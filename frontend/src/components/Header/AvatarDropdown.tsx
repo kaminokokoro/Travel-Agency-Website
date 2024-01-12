@@ -9,7 +9,7 @@ import Avatar from "shared/Avatar/Avatar";
 
 const solutions = [
   {
-    name: "Tài khoản",
+    name: "Account",
     href: "/account",
     icon: UserCircleIcon,
   },
@@ -17,7 +17,7 @@ const solutions = [
 
 const solutionsFoot = [
   {
-    name: "Đăng xuất",
+    name: "Logout",
     href: "##",
     icon: ArrowRightOnRectangleIcon,
   },

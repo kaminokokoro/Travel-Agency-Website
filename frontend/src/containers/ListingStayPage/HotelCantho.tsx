@@ -2,6 +2,7 @@ import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import SectionHeroArchivePage from "components/SectionHeroArchivePage/SectionHeroArchivePage";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
+import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import React, { FC, useEffect, useState } from "react";
 import SectionGridFilterCard from "./SectionGridFilterCard";
 import { Helmet } from "react-helmet";
@@ -126,7 +127,7 @@ const ListingStayPage: FC<ListingStayPageProps> = ({ className = "" }) => {
       data-nc-id="ListingStayPage"
     >
       <Helmet>
-        <title>Explore</title>
+        <title>LU</title>
       </Helmet>
       <BgGlassmorphism />
 
@@ -156,6 +157,8 @@ const ListingStayPage: FC<ListingStayPageProps> = ({ className = "" }) => {
           />
         </div>
 
+        {/* SECTION */}
+        <SectionSubscribe2 className="py-24 lg:py-28" />
       </div>
     </div>
   );

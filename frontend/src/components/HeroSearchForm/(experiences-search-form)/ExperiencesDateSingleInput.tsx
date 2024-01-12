@@ -37,13 +37,13 @@ const ExperiencesDateSingleInput: FC<ExperiencesDateSingleInputProps> = ({
         </div>
         <div className="flex-grow text-left">
           <span className="block xl:text-lg font-semibold">
-            {startDate?.toLocaleDateString("vi-VN", {
+            {startDate?.toLocaleDateString("en-US", {
               month: "short",
               day: "2-digit",
             }) || "Date"}
             {endDate
               ? " - " +
-                endDate?.toLocaleDateString("vi-VN", {
+                endDate?.toLocaleDateString("en-US", {
                   month: "short",
                   day: "2-digit",
                 })

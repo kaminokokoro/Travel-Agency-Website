@@ -1,10 +1,11 @@
-
+//  ######  CustomLink  ######## //
 export interface CustomLink {
   label: string;
   href: string;
   targetBlank?: boolean;
 }
 
+//  ##########  PostDataType ######## //
 export interface TaxonomyType {
   id: string | number;
   name: string;
@@ -81,11 +82,16 @@ export interface ExperiencesDataType {
   date: string;
   href: string;
   title: string;
+  // featuredImage: string;
+  // commentCount: number;
+  // viewCount: number;
   address: string;
   average_rating: number;
   rating_count: number;
   galleryImgs: string[];
   price: string;
+  // listingCategory: TaxonomyType;
+  // maxGuests: number;
 }
 
 //

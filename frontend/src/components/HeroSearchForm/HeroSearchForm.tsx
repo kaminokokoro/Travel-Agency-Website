@@ -21,19 +21,6 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
   const tabs: SearchTab[] = ["Stays", "Experiences", "Flights"];
   const [tabActive, setTabActive] = useState<SearchTab>(currentTab);
 
-  const getTabDisplayName = (tab: SearchTab): string => {
-    switch (tab) {
-      case "Stays":
-        return "Khách sạn";
-      case "Experiences":
-        return "Tour";
-      case "Flights":
-        return "Chuyến bay";
-      default:
-        return "";
-    }
-  };
-
   const renderTab = () => {
     return (
       <ul className="ml-2 sm:ml-6 md:ml-12 flex space-x-5 sm:space-x-8 lg:space-x-11 overflow-x-auto hiddenScrollbar">
@@ -42,16 +29,17 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
           return (
             <li
               onClick={() => setTabActive(tab)}
-              className={`flex-shrink-0 flex items-center cursor-pointer text-sm lg:text-base font-medium ${active
-                ? ""
-                : "text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-400"
-                } `}
+              className={`flex-shrink-0 flex items-center cursor-pointer text-sm lg:text-base font-medium ${
+                active
+                  ? ""
+                  : "text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-400"
+              } `}
               key={tab}
             >
               {active && (
                 <span className="block w-2.5 h-2.5 rounded-full bg-neutral-800 dark:bg-neutral-100 mr-2" />
               )}
-              <span>{getTabDisplayName(tab)}</span>
+              <span>{tab}</span>
             </li>
           );
         })}

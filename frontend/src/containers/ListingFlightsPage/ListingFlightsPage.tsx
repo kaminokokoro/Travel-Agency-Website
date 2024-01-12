@@ -1,6 +1,7 @@
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
-import SectionHeroArchivePageFlight from "components/SectionHeroArchivePage/SectionHeroArchivePageFlight";
+import SectionHeroArchivePage from "components/SectionHeroArchivePage/SectionHeroArchivePage";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
+import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import { TaxonomyType } from "data/types";
 import React, { FC } from "react";
 import SectionGridFilterCard from "./SectionGridFilterCard";
@@ -72,19 +73,19 @@ const ListingFlightsPage: FC<ListingFlightsPageProps> = ({
       data-nc-id="ListingFlightsPage"
     >
       <Helmet>
-        <title>Explore</title>
+        <title>LU</title>
       </Helmet>
       <BgGlassmorphism />
 
       <div className="container relative">
         {/* SECTION HERO */}
-        <SectionHeroArchivePageFlight
+        <SectionHeroArchivePage
           currentPage="Flights"
           currentTab="Flights"
           listingType={
             <>
               <i className="text-2xl las la-plane-departure"></i>
-              <span className="ml-2.5">11 chuyến bay</span>
+              <span className="ml-2.5">1599 flights</span>
             </>
           }
           className="pt-10 pb-24 lg:pb-28 lg:pt-16 "
@@ -93,6 +94,18 @@ const ListingFlightsPage: FC<ListingFlightsPageProps> = ({
         {/* SECTION */}
         <SectionGridFilterCard className="pb-24 lg:pb-28" />
 
+        {/* SECTION 1 */}
+        <SectionSliderNewCategories
+          heading="Explore top destination ✈"
+          subHeading="Explore thousands of destinations around the world"
+          categoryCardType="card4"
+          itemPerRow={4}
+          categories={DEMO_CATS}
+          uniqueClassName="ListingFlightsPage-section1"
+        />
+
+        {/* SECTION */}
+        <SectionSubscribe2 className="py-24 lg:py-28" />
       </div>
     </div>
   );

@@ -34,6 +34,11 @@ const CardCategoryBox1: FC<CardCategoryBox1Props> = ({
         <h2 className="text-base font-medium">
           <span className="line-clamp-1">{name}</span>
         </h2>
+        <span
+          className={`block mt-2 text-sm text-neutral-500 dark:text-neutral-400`}
+        >
+          19 minutes drive
+        </span>
       </div>
     </Link>
   );

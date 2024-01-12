@@ -12,14 +12,48 @@ export interface WidgetFooterMenu {
 const widgetMenus: WidgetFooterMenu[] = [
   {
     id: "5",
-    title: "Thông tin nhóm",
+    title: "Getting started",
     menus: [
-      { href: "#", label: "Lê Trường Giang - 21002135" },
-      { href: "#", label: "Nguyễn Thị Huyền Sâm - 21002170" },
-      { href: "#", label: "Phạm Hùng - 21000143" },
-      { href: "#", label: "Lê Gia Huy - 21002149" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
     ],
-  }
+  },
+  {
+    id: "1",
+    title: "Explore",
+    menus: [
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+    ],
+  },
+  {
+    id: "2",
+    title: "Resources",
+    menus: [
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+    ],
+  },
+  {
+    id: "4",
+    title: "Community",
+    menus: [
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+      { href: "#", label: "le truong giang" },
+    ],
+  },
 ];
 
 const Footer: React.FC = () => {

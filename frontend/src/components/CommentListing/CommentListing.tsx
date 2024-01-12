@@ -17,7 +17,7 @@ export interface CommentListingProps {
 }
 
 const DEMO_DATA: CommentListingDataType = {
-  name: "Hùng",
+  name: "jasmine",
   date: "Dec 26, 2023",
   comment:
     "like it",
@@ -56,9 +56,9 @@ const CommentListing: FC<CommentListingProps> = ({
                 </>
               )}
             </div>
-            {/* <span className="text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">
+            <span className="text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">
               {data.date}
-            </span> */}
+            </span>
           </div>
           <div className="flex text-yellow-500">
             <StarIcon className="w-4 h-4" />
