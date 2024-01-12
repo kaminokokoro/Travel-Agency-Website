@@ -42,7 +42,7 @@ import {
   
     return (
       <Box m="20px">
-        <Header title="Users" subtitle="User Management" />
+        <Header title="HOTELS BOOKING" subtitle="List of Hotels" />
         <Box
           m="40px 0 0 0"
           height="75vh"
