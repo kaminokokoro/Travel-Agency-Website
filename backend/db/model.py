@@ -115,12 +115,12 @@ class UserRatingFlightProvider(Base):
 class Tour(Base):
     __tablename__ = "tour"
     id = Column(String(36), primary_key=True, default=generate_uuid(), unique=True)
-    name = Column(String(50), nullable=False)
+    name = Column(String(500), nullable=False)
     destination = Column(String(200), nullable=False)
     # high_lights = Column(String(200))
     duration = Column(String(50), nullable=False)
     # Service_available_in = Column(String(50))
-    description = Column(String(2000))
+    description = Column(String(10000))
     # experience= Column(String(200))
     adult_price = Column(Integer)
     child_price = Column(Integer)

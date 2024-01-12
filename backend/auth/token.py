@@ -1,13 +1,7 @@
 from datetime import datetime, timedelta
 from typing import Dict
-
-
 import jwt
-# from jose import jwt
 from cryptography.hazmat.primitives.asymmetric import rsa
-
-
-# from backend.config.ProjectSettings import private_key, public_key
 
 
 class AccessToken:
