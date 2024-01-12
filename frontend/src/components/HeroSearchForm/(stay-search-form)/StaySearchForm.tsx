@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import LocationInput from "../LocationInput";
-import GuestsInput from "../GuestsInput";
 import StayDatesRangeInput from "./StayDatesRangeInput";
 
 const StaySearchForm: FC<{}> = () => {
@@ -11,7 +10,6 @@ const StaySearchForm: FC<{}> = () => {
         <div className="self-center border-r border-slate-200 dark:border-slate-700 h-8"></div>
         <StayDatesRangeInput className="flex-1" />
         <div className="self-center border-r border-slate-200 dark:border-slate-700 h-8"></div>
-        <GuestsInput className="flex-1" />
       </form>
     );
   };

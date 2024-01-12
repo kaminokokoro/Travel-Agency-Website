@@ -1,6 +1,6 @@
 import { avatarColors } from "contains/contants";
 import React, { FC } from "react";
-import avatar1 from "images/avatars/Image-1.png";
+import avatar1 from "images/avatars/ava.png";
 
 export interface AvatarProps {
   containerClassName?: string;
@@ -22,7 +22,7 @@ const Avatar: FC<AvatarProps> = ({
   hasCheckedClass = "w-4 h-4 -top-0.5 -right-0.5",
 }) => {
   const url = imgUrl || "";
-  const name = userName || "John Doe";
+  const name = userName || "";
   const _setBgColor = (name: string) => {
     const backgroundIndex = Math.floor(
       name.charCodeAt(0) % avatarColors.length

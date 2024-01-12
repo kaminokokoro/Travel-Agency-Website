@@ -20,7 +20,7 @@ const CommonLayout: FC<CommonLayoutProps> = ({ children }) => {
                 }`
               }
             >
-              Account info
+              Thông tin tài khoản
             </NavLink>
             <NavLink
               to="/account-password"
@@ -30,7 +30,7 @@ const CommonLayout: FC<CommonLayoutProps> = ({ children }) => {
                 }`
               }
             >
-              Change password
+              Thay đổi mật khẩu
             </NavLink>
           </div>
         </div>

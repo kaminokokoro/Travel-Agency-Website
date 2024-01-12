@@ -124,7 +124,7 @@ const StayDetailPageContainer: FC<{}> = () => {
                   fontClass=""
                   sizeClass="h-16 px-4 py-3"
                   rounded="rounded-3xl"
-                  placeholder="Share your thoughts ..."
+                  placeholder="Chia sẻ cảm nhận..."
                 />
                 <ButtonCircle
                   className="absolute right-2 top-1/2 transform -translate-y-1/2"

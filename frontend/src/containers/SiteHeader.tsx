@@ -158,7 +158,7 @@ const SiteHeader = () => {
   return (
     <>
       <Helmet>
-        <title>LU</title>
+        <title>Explore</title>
       </Helmet>
       {renderControlSelections()}
       {renderHeader()}

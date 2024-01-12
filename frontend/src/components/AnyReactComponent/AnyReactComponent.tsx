@@ -1,7 +1,7 @@
 import { Transition } from "@headlessui/react";
 import ExperiencesCard from "components/ExperiencesCard/ExperiencesCard";
 import StayCard from "components/StayCard/StayCard";
-import { ExperiencesDataType, StayDataType, Hotel } from "data/types";
+import { ExperiencesDataType, Hotel } from "data/types";
 import React, { FC, Fragment } from "react";
 import { useState } from "react";
 
@@ -10,8 +10,6 @@ export interface AnyReactComponentProps {
   listing?: Hotel;
   experiences?: ExperiencesDataType;
   isSelected?: boolean;
-  // lat: number;
-  // lng: number;
 }
 
 const AnyReactComponent: FC<AnyReactComponentProps> = ({

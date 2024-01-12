@@ -1,14 +1,12 @@
 import SectionHero from "components/SectionHero/SectionHero";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import React, { useEffect, useState } from "react";
-import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
-// import SectionOurFeatures from "components/SectionOurFeatures/SectionOurFeatures";
 import SectionGridFeaturePlaces from "./SectionGridFeaturePlaces";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import { TaxonomyType } from "data/types";
-import { Server, HotelProps } from "../../Sever";
-import { StayDataType, Hotel } from "data/types";
+import { Server } from "../../Sever";
+import { Hotel } from "data/types";
 
 
 
@@ -204,13 +202,12 @@ function PageHome() {
             categoryCardType="card4"
             itemPerRow={4}
             heading="Tour nổi bật"
-            subHeading="Popular places to stay that Chisfis recommends for you"
+            subHeading="Popular places to stay that Explore recommends for you"
             sliderStyle="style2"
             uniqueClassName="PageHome_s2"
           />
         </div>
 
-        <SectionSubscribe2 />
 
       </div>
     </div>

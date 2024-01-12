@@ -35,20 +35,20 @@ const StayDatesRangeInput: FC<StayDatesRangeInputProps> = ({
         </div>
         <div className="flex-grow text-left">
           <span className="block xl:text-lg font-semibold">
-            {startDate?.toLocaleDateString("en-US", {
+            {startDate?.toLocaleDateString("vi-VN", {
               month: "short",
               day: "2-digit",
             }) || "Add dates"}
             {endDate
               ? " - " +
-                endDate?.toLocaleDateString("en-US", {
+                endDate?.toLocaleDateString("vi-VN", {
                   month: "short",
                   day: "2-digit",
                 })
               : ""}
           </span>
           <span className="block mt-1 text-sm text-neutral-400 leading-none font-light">
-            {"Check in - Check out"}
+            {"Nhận phòng - Trả phòng"}
           </span>
         </div>
       </>

@@ -2,13 +2,13 @@ import { DateRage } from "components/HeroSearchForm/type";
 
 const converSelectedDateToString = ([startDate, endDate]: DateRage) => {
   const dateString =
-    (startDate?.toLocaleDateString("en-US", {
+    (startDate?.toLocaleDateString("vi-VN", {
       month: "short",
       day: "2-digit",
     }) || "") +
     (endDate
       ? " - " +
-        endDate?.toLocaleDateString("en-US", {
+        endDate?.toLocaleDateString("vi-VN", {
           month: "short",
           day: "2-digit",
         })

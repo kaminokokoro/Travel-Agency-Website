@@ -36,28 +36,11 @@ const ListingExperiencesDetail: FC<{}> = () => {
           <span>·</span>
           <span>
             <i className="las la-map-marker-alt"></i>
-            <span className="ml-1"> Tokyo, Jappan</span>
+            <span className="ml-1"> Hà Nội</span>
           </span>
         </div>
 
-        {/* 5 */}
-        <div className="w-full border-b border-neutral-100 dark:border-neutral-700" />
 
-        {/* 6 */}
-        <div className="flex items-center justify-between xl:justify-start space-x-8 xl:space-x-12 text-sm text-neutral-700 dark:text-neutral-300">
-          <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-clock text-2xl"></i>
-            <span className="">3.5 hours</span>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-user-friends text-2xl"></i>
-            <span className="">Up to 10 people</span>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-language text-2xl"></i>
-            <span className="">English, Vietnamese</span>
-          </div>
-        </div>
       </div>
     );
   };
@@ -65,51 +48,9 @@ const ListingExperiencesDetail: FC<{}> = () => {
   const renderSection2 = () => {
     return (
       <div className="listingSection__wrap">
-        <h2 className="text-2xl font-semibold">Experiences descriptions</h2>
+        <h2 className="text-2xl font-semibold">Mô tả tour</h2>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         <div className="text-neutral-6000 dark:text-neutral-300">
-          <p>
-            TRANG AN BOAT TOUR & MUA CAVE CLIMBING TOUR FROM HANOI
-            <br />
-            <br />
-            07:30 – 08:00 – Our guide will meet you at your hotel/stay and start
-            a 120km comfortable Limousine bus journey through the verdant
-            landscape. Stopover for a rest on the way.
-            <br />
-            <br />
-            BAI DINH PAGODA EXPLORER.
-            <br />
-            <br />
-            10:30 – Arrive Bai Dinh pagoda complex, get on electric cars to
-            visit massive architecture.
-            <br />
-            <br />
-            12:15 – Enjoy the buffet lunch at our restaurant, a great place to
-            savor the flavours of Vietnamese food.
-            <br />
-            <br />
-            TRANG AN TOUR ON BOAT.
-            <br />
-            <br />
-            13:30 – Visit Trang An Grottoes, get on a rowing boat traveling
-            along the river with scenic mountain and green fields landscape.
-            <br />
-            <br />
-            MUA CAVE HIKING. TAKE PICTURE
-            <br />
-            <br />
-            15:45 – Arrive at Mua Cave and start an amazing trek up to the top
-            of Ngoa Long mountain.
-            <br />
-            <br />
-            17:30 – 20:00 – Return to our Limousine bus and then come back to
-            Hanoi. Drop you off at your hotel/stay. Other things to note
-            <br />
-            <br />
-            It is one full day tour. Start from 07.30 AM and finish at 20.00. We
-            just put one hour and default departure time because we have many
-            other tours. IF you need any further details
-          </p>
         </div>
       </div>
     );
@@ -119,7 +60,7 @@ const ListingExperiencesDetail: FC<{}> = () => {
     return (
       <div className="listingSection__wrap">
         {/* HEADING */}
-        <h2 className="text-2xl font-semibold">Reviews (23 reviews)</h2>
+        <h2 className="text-2xl font-semibold">Đánh giá (2 đánh giá)</h2>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
 
         {/* Content */}
@@ -130,7 +71,7 @@ const ListingExperiencesDetail: FC<{}> = () => {
               fontClass=""
               sizeClass="h-16 px-4 py-3"
               rounded="rounded-3xl"
-              placeholder="Share your thoughts ..."
+              placeholder="Chia sẻ cảm nhận của bạn..."
             />
             <ButtonCircle
               className="absolute right-2 top-1/2 transform -translate-y-1/2"
@@ -145,11 +86,6 @@ const ListingExperiencesDetail: FC<{}> = () => {
         <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
           <CommentListing className="py-8" />
           <CommentListing className="py-8" />
-          <CommentListing className="py-8" />
-          <CommentListing className="py-8" />
-          <div className="pt-8">
-            <ButtonSecondary>View more 20 reviews</ButtonSecondary>
-          </div>
         </div>
       </div>
     );
@@ -159,41 +95,17 @@ const ListingExperiencesDetail: FC<{}> = () => {
     return (
       <div className="listingSection__wrap">
         {/* HEADING */}
-        <h2 className="text-2xl font-semibold">Things to know</h2>
+        <h2 className="text-2xl font-semibold">Lưu ý</h2>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
 
         {/* CONTENT */}
         <div>
-          <h4 className="text-lg font-semibold">Cancellation policy</h4>
+          <h4 className="text-lg font-semibold">Chính sách hủy Tour</h4>
           <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-            Any experience can be canceled and fully refunded within 24 hours of
-            purchase, or at least 7 days before the experience starts.
+          Mọi tour đều có thể bị hủy và được hoàn tiền đầy đủ trong vòng 24 giờ kể từ khi mua hoặc ít nhất 7 ngày trước khi tour bắt đầu
           </span>
         </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
-
-        {/* CONTENT */}
-        <div>
-          <h4 className="text-lg font-semibold">Guest requirements</h4>
-          <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-            Up to 10 guests ages 4 and up can attend. Parents may also bring
-            children under 2 years of age.
-          </span>
-        </div>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
-
-        {/* CONTENT */}
-        <div>
-          <h4 className="text-lg font-semibold">What to bring</h4>
-          <div className="prose sm:prose">
-            <ul className="mt-3 text-neutral-500 dark:text-neutral-400 space-y-2">
-              <li>
-                Formal Wear To Visit Bai Dinh Pagoda Be ready before 7.30 Am.
-              </li>
-              <li>We will pick up from 07.30 to 08.00 AM</li>
-            </ul>
-          </div>
-        </div>
       </div>
     );
   };
@@ -204,9 +116,9 @@ const ListingExperiencesDetail: FC<{}> = () => {
         {/* PRICE */}
         <div className="flex justify-between">
           <span className="text-3xl font-semibold">
-            $19
+            200000 VND 
             <span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400">
-              /person
+              /người
             </span>
           </span>
           <StartRating />
@@ -215,30 +127,26 @@ const ListingExperiencesDetail: FC<{}> = () => {
         {/* FORM */}
         {/* FORM */}
         <form className="flex flex-col border border-neutral-200 dark:border-neutral-700 rounded-3xl ">
-          <StayDatesRangeInput className="flex-1 z-[11]" />
-          <div className="w-full border-b border-neutral-200 dark:border-neutral-700"></div>
+          {/* <StayDatesRangeInput className="flex-1 z-[11]" /> */}
+          {/* <div className="w-full border-b border-neutral-200 dark:border-neutral-700"></div> */}
           <GuestsInput className="flex-1" />
         </form>
 
         {/* SUM */}
         <div className="flex flex-col space-y-4">
           <div className="flex justify-between text-neutral-6000 dark:text-neutral-300">
-            <span>$19 x 3 adults</span>
-            <span>$57</span>
-          </div>
-          <div className="flex justify-between text-neutral-6000 dark:text-neutral-300">
-            <span>Service charge</span>
-            <span>$0</span>
+            <span>200000 VND x 4 người</span>
+            <span>800000 VND</span>
           </div>
           <div className="border-b border-neutral-200 dark:border-neutral-700"></div>
           <div className="flex justify-between font-semibold">
-            <span>Total</span>
-            <span>$199</span>
+            <span>Tổng</span>
+            <span>800000 VND</span>
           </div>
         </div>
 
         {/* SUBMIT */}
-        <ButtonPrimary href={"/checkout"}>Reserve</ButtonPrimary>
+        <ButtonPrimary href={"/checkout"}>Đặt trước</ButtonPrimary>
       </div>
     );
   };

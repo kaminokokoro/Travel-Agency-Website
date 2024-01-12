@@ -9,8 +9,8 @@ export interface StartRatingProps {
 
 const StartRating: FC<StartRatingProps> = ({
   className = "",
-  point = 4.6,
-  reviewCount = 112,
+  point = 5,
+  reviewCount = 2,
 }) => {
   return (
     <div

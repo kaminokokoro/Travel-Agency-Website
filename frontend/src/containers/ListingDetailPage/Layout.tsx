@@ -5,7 +5,6 @@ import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import ListingImageGallery from "components/ListingImageGallery/ListingImageGallery";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
-import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import { Server, HotelProps } from "../../Sever";
 import { StayDataType, Hotel } from "data/types";
 import { TaxonomyType } from "data/types";
@@ -167,7 +166,6 @@ const DetailPagetLayout = ({ children }: { children: ReactNode }) => {
             categories = {DEMO_CATS}
           />
         </div>
-        <SectionSubscribe2 className="pt-24 lg:pt-32" />
       </div>
     </div>
   );

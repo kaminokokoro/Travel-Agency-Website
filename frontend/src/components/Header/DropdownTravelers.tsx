@@ -1,6 +1,6 @@
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { PathName } from "routers/types";
 
@@ -14,27 +14,28 @@ interface SolutionItem {
 
 const solutions: SolutionItem[] = [
   {
-    name: "Stays",
-    description: "Stays rental description ",
-    href: "/listing-stay",
+    name: "Khách sạn",
+    description: "",
+    href: "/listing-stay-hanoi",
     icon: IconFour,
     active: true,
   },
   {
-    name: "Flights",
-    description: "Flights description",
-    href: "/listing-flights",
-    icon: IconTwo,
-  },
-  {
-    name: "Things to do",
-    description: "Tour and experiences",
+    name: "Tour",
+    description: "",
     href: "/listing-experiences",
     icon: IconOne,
+  },
+  {
+    name: "Chuyến bay",
+    description: "",
+    href: "/listing-flights",
+    icon: IconTwo,
   },
 ];
 
 export default function DropdownTravelers() {
+  const [selectedItem, setSelectedItem] = useState(solutions[0]);
   return (
     <div className="DropdownTravelers">
       <Popover className="relative">
@@ -45,7 +46,7 @@ export default function DropdownTravelers() {
                 group py-2 rounded-md text-sm sm:text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <div className={` inline-flex items-center `} role="button">
-                <span>Travelers</span>
+                <span>{selectedItem.name}</span>
                 <ChevronDownIcon
                   className={`${open ? "-rotate-180" : "text-opacity-70 "}
                   ml-2 h-5 w-5 text-neutral-700 group-hover:text-opacity-80 transition ease-in-out duration-150 `}
@@ -69,9 +70,12 @@ export default function DropdownTravelers() {
                       <Link
                         key={index}
                         to={item.href}
-                        onClick={() => close()}
+                        onClick={() => {
+                          setSelectedItem(item);
+                          close();
+                        }}
                         className={`flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 ${
-                          item.active
+                          item === selectedItem
                             ? "bg-neutral-100 dark:bg-neutral-700"
                             : ""
                         }`}
@@ -97,6 +101,7 @@ export default function DropdownTravelers() {
       </Popover>
     </div>
   );
+
 }
 
 function IconOne() {
