@@ -557,44 +557,44 @@ export const mockUserData = [
 ];
 
 
-export const mockBarHotelData = [
-  { hotel: "Khach san A", rating: "1.3", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san C", rating: "3.2", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san E", rating: "4.5", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san B", rating: "2.7", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san J", rating: "4.1", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san F", rating: "0.9", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san M", rating: "3.8", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san D", rating: "2.2", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san L", rating: "4.9", "ratingColor": "hsl(176, 70%, 50%)" },
-  { hotel: "Khach san O", rating: "1.6", "ratingColor": "hsl(176, 70%, 50%)" },
-];
+// export const mockBarHotelData = [
+//   { hotel: "Khach san A", rating: "1.3", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san C", rating: "3.2", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san E", rating: "4.5", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san B", rating: "2.7", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san J", rating: "4.1", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san F", rating: "0.9", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san M", rating: "3.8", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san D", rating: "2.2", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san L", rating: "4.9", "ratingColor": "hsl(176, 70%, 50%)" },
+//   { hotel: "Khach san O", rating: "1.6", "ratingColor": "hsl(176, 70%, 50%)" },
+// ];
 
-export const mockBarFlightData = [
-  { flightProvider: "Emirates", rating: "2.3", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "Delta Airlines", rating: "4.2", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "British Airways", rating: "3.5", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "Lufthansa", rating: "1.8", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "Qatar Airways", rating: "4.9", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "United Airlines", rating: "0.7", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "Singapore Airlines", rating: "3.2", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "Air France", rating: "2.6", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "Cathay Pacific", rating: "4.0", ratingColor: "hsl(204, 70%, 50%)" },
-  { flightProvider: "American Airlines", rating: "1.4", ratingColor: "hsl(204, 70%, 50%)" },
-];
+// export const mockBarFlightData = [
+//   { flightProvider: "Emirates", rating: "2.3", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "Delta Airlines", rating: "4.2", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "British Airways", rating: "3.5", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "Lufthansa", rating: "1.8", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "Qatar Airways", rating: "4.9", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "United Airlines", rating: "0.7", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "Singapore Airlines", rating: "3.2", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "Air France", rating: "2.6", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "Cathay Pacific", rating: "4.0", ratingColor: "hsl(204, 70%, 50%)" },
+//   { flightProvider: "American Airlines", rating: "1.4", ratingColor: "hsl(204, 70%, 50%)" },
+// ];
 
-export const mockBarTourData = [
-  { tour: "Tropical Retreat", rating: "4.9" },
-  { tour: "Mountain Adventure", rating: "4.8" },
-  { tour: "City Explorer", rating: "4.7" },
-  { tour: "Island Paradise", rating: "4.6" },
-  { tour: "Historical Journey", rating: "4.5" },
-  { tour: "Wildlife Safari", rating: "4.4" },
-  { tour: "Desert Expedition", rating: "4.3" },
-  { tour: "Northern Lights Discovery", rating: "4.2" },
-  { tour: "Cruise Along the Riviera", rating: "4.1" },
-  { tour: "Mystical Forest Retreat", rating: "4.0" },
-];
+// export const mockBarTourData = [
+//   { tour: "Tropical Retreat", rating: "4.9" },
+//   { tour: "Mountain Adventure", rating: "4.8" },
+//   { tour: "City Explorer", rating: "4.7" },
+//   { tour: "Island Paradise", rating: "4.6" },
+//   { tour: "Historical Journey", rating: "4.5" },
+//   { tour: "Wildlife Safari", rating: "4.4" },
+//   { tour: "Desert Expedition", rating: "4.3" },
+//   { tour: "Northern Lights Discovery", rating: "4.2" },
+//   { tour: "Cruise Along the Riviera", rating: "4.1" },
+//   { tour: "Mystical Forest Retreat", rating: "4.0" },
+// ];
 
 
 
